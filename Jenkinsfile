@@ -1,5 +1,7 @@
 pipeline {
-    agent any 
+    agent {
+        docker { image 'python:alpine' }
+    } 
     stages {
         stage('Checkout') {
             steps {
@@ -9,6 +11,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Hello world!' 
+                sh 'python -V'
             }
         }
     }
