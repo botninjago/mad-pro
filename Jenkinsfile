@@ -1,24 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker { image 'python:alpine' }
+    }
     stages {
-        stage('Checkout') {
+        stage('Test') {
             steps {
-                checkout scm
-            }
-        }
-        stage('Build') {
-            steps {
-                echo 'Hello world!' 
-                sh 'pwd'
-                sh 'ls'
-                script {
-                    withPythonEnv('python3') {
-                        sh 'python3 --version'
-                        sh 'python3 -m pip install --upgrade pip'
-                        sh 'pip install -r requirements.txt'
-                        sh 'pip freeze'
-                    }
-                }
+                sh 'python3 --version'
             }
         }
     }
