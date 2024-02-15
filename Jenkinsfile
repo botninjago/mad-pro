@@ -5,7 +5,11 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'python3 --version'
+                script {
+                    def jsonString = '{"key1": "value1", "key2": "value2"}'
+                    def jsonObject = readJSON text: jsonString
+                    echo "JSON Object: ${jsonObject}"
+                }
             }
         }
     }
