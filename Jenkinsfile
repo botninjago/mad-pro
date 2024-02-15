@@ -11,17 +11,11 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
-            setps {
-                script {
-                    sh 'python3 -m pip install --upgrade pip || true'
-                    sh 'python3 -m pip install -r requirements.txt || true'
-                }
-            }
-        }
         stage('Test') {
             steps {
                 script {
+                    sh 'python3 -m pip install --upgrade pip || true'
+                    sh 'python3 -m pip install -r requirements.txt || true'                    
                     def jsonSlurper = new JsonSlurper()
                     def object = jsonSlurper.parseText CONTEXT_ARGS
                     assert object instanceof Map
