@@ -17,9 +17,9 @@ pipeline {
                     def jsonSlurper = new JsonSlurper()
                     def object = jsonSlurper.parseText CONTEXT_ARGS
                     assert object instanceof Map
-                    echo ${object}
-                    echo ${object.key1}
-                    echo ${object.key2}
+                    println object
+                    println object.key1
+                    println object.key2
                 }
             }
         }
