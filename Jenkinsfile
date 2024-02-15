@@ -7,14 +7,16 @@ pipeline {
     }
 
     parameters {
-        string(name: 'CONTEXT_ARGS', defaultValue: '{"key":"value"}', description: '')
+        string(name: 'CONTEXT_ARGS', defaultValue: '{"key1":"value1","key2":"value2"}', description: '')
     }
 
     stages {
         stage('Build') {
             setps {
-                sh 'python3 -m pip install --upgrade pip || true'
-                sh 'python3 -m pip install -r requirements.txt || true'
+                script {
+                    sh 'python3 -m pip install --upgrade pip || true'
+                    sh 'python3 -m pip install -r requirements.txt || true'
+                }
             }
         }
         stage('Test') {
