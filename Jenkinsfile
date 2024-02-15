@@ -11,6 +11,12 @@ pipeline {
     }
 
     stages {
+        stage('Build') {
+            setps {
+                sh 'python3 -m pip install --upgrade pip || true'
+                sh 'python3 -m pip install -r requirements.txt || true'
+            }
+        }
         stage('Test') {
             steps {
                 script {
@@ -20,6 +26,8 @@ pipeline {
                     println object
                     println object.key1
                     println object.key2
+
+                    sh 'python test.py ${CONTEXT_ARGS}'
                 }
             }
         }
