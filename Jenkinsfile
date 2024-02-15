@@ -7,7 +7,7 @@ pipeline {
     }
 
     parameters {
-        string(name, 'CONTEXT_ARGS', defaultValue: '{"key1": "value1", "key2": "value2"}', description: '')
+        string(name, 'CONTEXT_ARGS', defaultValue: '', description: '')
     }
 
     stages {
