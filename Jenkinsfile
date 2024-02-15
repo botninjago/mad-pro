@@ -14,6 +14,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
+                    def jsonSlurper = new JsonSlurper()
                     def object = jsonSlurper.parseText CONTEXT_ARGS
                     assert object instanceof Map
                     echo '${object}'
