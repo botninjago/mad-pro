@@ -22,7 +22,7 @@ pipeline {
                     println object
                     println object.key1
                     println object.key2
-                    sh 'python test.py ${CONTEXT_ARGS} || true'
+                    sh 'python3 test.py ${CONTEXT_ARGS}'
                 }
             }
         }
