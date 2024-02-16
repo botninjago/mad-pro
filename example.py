@@ -1,6 +1,15 @@
 import argparse
 import json
 
+
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Process JSON string argument')
     parser.add_argument('json_string', type=str, help='A JSON string to process')
