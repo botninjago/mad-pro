@@ -23,6 +23,8 @@ pipeline {
                     // println object.key1
                     // println object.key2
                     sh 'python3 test.py ${CONTEXT_ARGS}'
+                    echo "${env.NODE_NAME}, ${env.JOB_NAME}, ${env.arch}"
+                    echo "${env.BUILD_USER}, ${env.BUILD_NUMBER}, ${env.BUILD_URL}"
                 }
             }
         }
