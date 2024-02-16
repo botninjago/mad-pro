@@ -22,6 +22,7 @@ pipeline {
                     withPythonEnv('python3') {
                         sh 'python3 -m venv .env'
                         sh 'source .env/bin/activate'
+                        sh 'which python3'
                         sh 'python3 -m pip install --upgrade pip || true'
                         sh 'python3 -m pip install -r requirements.txt || true'
                     }
@@ -30,8 +31,10 @@ pipeline {
         }
         stage('Test') {
             steps {
-                withPythonEnv('python3') {
-                    sh 'python3 -m pytest'
+                script{
+                    withPythonEnv('python3') {
+                        sh 'python3 -m pytest'
+                    }
                 }
             }
         }
