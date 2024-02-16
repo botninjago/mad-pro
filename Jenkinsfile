@@ -5,7 +5,7 @@ pipeline {
     agent {
         docker { 
             image 'python:alpine'
-            args '-u root' 
+            // args '-u root' 
         }
     }
 
@@ -22,7 +22,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    withPythonEnv('python3') {
+                    withPythonEnv('.pyenv-python3') {
                         sh 'python3 -m pip install --upgrade pip || true'
                         sh 'python3 -m pip install -r requirements.txt || true'
                     }
@@ -32,8 +32,8 @@ pipeline {
         stage('Test') {
             steps {
                 script{
-                    withPythonEnv('python3') {
-                        sh 'python3 -m pytest'
+                    withPythonEnv('.pyenv-python3') {
+                        sh 'python3 -m pytest --verbose'
                     }
                 }
             }
