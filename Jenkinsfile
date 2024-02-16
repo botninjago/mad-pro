@@ -16,6 +16,16 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Build') {
+            steps {
+                script {
+                    withPythonEnv('python3') {
+                        sh 'python3 -m pip install --upgrade pip || true'
+                        sh 'python3 -m pip install -r requirements.txt || true'
+                    }
+                }        
+            }
+        }
         stage('Test') {
             steps {
                 withPythonEnv('python3') {
@@ -23,12 +33,10 @@ pipeline {
                 }
             }
         }
-        stage('Build') {
+        stage('Model') {
             steps {
                 script {
                     withPythonEnv('python3') {
-                        sh 'python3 -m pip install --upgrade pip || true'
-                        sh 'python3 -m pip install -r requirements.txt || true'
                         sh 'python3 example.py ${CONTEXT_ARGS}'                    
                     }
 
