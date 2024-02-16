@@ -5,7 +5,7 @@ pipeline {
     agent {
         docker { 
             image 'python:alpine'
-            args '-u root'
+            // args '-u root'
         }
     }
 
@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                cleanWs()
+                // cleanWs()
                 checkout scm
             }
         }
