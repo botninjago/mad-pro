@@ -22,17 +22,17 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    withPythonEnv('.pyenv-python3') {
-                        sh 'python3 -m pip install --upgrade pip || true'
-                        sh 'python3 -m pip install -r requirements.txt || true'
-                    }
+                    sh 'python3 -m venv .env'
+                    sh 'source .env/bin/activate'
+                    sh 'python3 -m pip install --upgrade pip || true'
+                    sh 'python3 -m pip install -r requirements.txt || true'
                 }        
             }
         }
         stage('Test') {
             steps {
                 script{
-                    withPythonEnv('.pyenv-python3') {
+                    withPythonEnv('.env') {
                         sh 'python3 -m pytest --verbose'
                     }
                 }
