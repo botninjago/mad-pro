@@ -42,7 +42,7 @@ pipeline {
             steps {
                 script {
                     withPythonEnv('python3') {
-                        sh 'python3 example.py ${CONTEXT_ARGS}'                    
+                        sh 'python3 run.py ${CONTEXT_ARGS}'                    
                     }
 
                     // def jsonSlurper = new JsonSlurper()
