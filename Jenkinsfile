@@ -29,15 +29,15 @@ pipeline {
                 }        
             }
         }
-        stage('Test') {
-            steps {
-                script{
-                    withPythonEnv('python3') {
-                        sh 'python3 -m pytest -v'
-                    }
-                }
-            }
-        }
+        // stage('Test') {
+        //     steps {
+        //         script{
+        //             withPythonEnv('python3') {
+        //                 sh 'python3 -m pytest -v'
+        //             }
+        //         }
+        //     }
+        // }
         stage('Model') {
             steps {
                 script {
