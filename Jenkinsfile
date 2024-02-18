@@ -14,12 +14,11 @@ pipeline {
     }
 
     stages {
-        stage('Checkout') {
-            steps {
-                cleanWs()
-                checkout scm
-            }
-        }
+        // stage('Checkout') {
+        //     steps {
+        //         checkout scm
+        //     }
+        // }
         stage('Build') {
             steps {
                 script {
@@ -56,6 +55,12 @@ pipeline {
                     echo "${env.NODE_NAME}, ${env.JOB_NAME}, ${env.arch}"
                     echo "${env.BUILD_USER}, ${env.BUILD_NUMBER}, ${env.BUILD_URL}"
                 }
+            }
+        }
+        stage('Delete') {
+            steps {
+                echo 'Cleanup'
+                cleanWs()
             }
         }
     }
