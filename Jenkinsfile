@@ -16,7 +16,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // cleanWs()
+                cleanWs()
                 checkout scm
             }
         }
@@ -34,7 +34,7 @@ pipeline {
             steps {
                 script{
                     withPythonEnv('python3') {
-                        sh 'python3 -m pytest --verbose'
+                        sh 'python3 -m pytest -v'
                     }
                 }
             }
