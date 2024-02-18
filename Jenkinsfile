@@ -25,7 +25,7 @@ pipeline {
                 script {
                     withPythonEnv('python3') {
                         sh 'python3 -m pip install --upgrade pip || true'
-                        sh "python3 -m pip install --target ${env.WORKSPACE} --user -r requirements.txt || true"
+                        sh "python3 -m pip install --target ${env.WORKSPACE} -r requirements.txt || true"
                     }
                 }        
             }
