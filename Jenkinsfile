@@ -41,6 +41,10 @@ pipeline {
         stage('Model') {
             steps {
                 script {
+                    models = readJSON file: 'models.json'
+                    models = models[0..<models.size()]
+                    echo "${models}"
+                    
                     withPythonEnv('python3') {
                         sh 'python3 run.py ${CONTEXT_ARGS}'                    
                     }

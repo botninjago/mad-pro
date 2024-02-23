@@ -1,0 +1,6103 @@
+[
+    {
+      "name": "pyt_inference_openai_whisper_transcribe",
+      "url": "https://github.com/openai/whisper",
+      "dockerfile": "docker/pyt_openai_whisper",
+      "dockercontext": "scripts/pyt_openai_whisper",
+      "scripts": "scripts/pyt_openai_whisper/",
+      "data": "fleurs",
+      "n_gpus": "1",
+      "owner": "yu.shao@amd.com",
+      "training_precision": "",
+      "tags": [
+          "inference",
+          "pyt",
+          "openai",
+          "openai-whisper",
+          "Saturday"
+          ],
+      "args": "--model_name large-v2 --language en_us --task transcribe"
+    },
+    {
+      "name": "stable_diffusion_ort_rocm",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/sd_ort_rocm",
+      "scripts": "scripts/sd_ort_rocm/",
+      "data": "ort_stable_diffusion",
+      "n_gpus": "2",
+      "owner": "christopher.austen@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_sd_ort_rocm.csv",
+      "tags": [
+        "Inference",
+        "migx",
+        "migx-inference",
+        "Monday"
+      ],
+      "args": ""
+     },
+     {
+      "name": "migx_mlir_perf_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx",
+      "dockercontext": "scripts/migx_mlir",
+      "data": "migraphx_models",
+      "scripts": "scripts/migx_mlir/",
+      "n_gpus": "1",
+      "owner": "christopher.austen@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_mlir.csv",
+      "tags": [
+        "Inference",
+        "migx",
+        "migx-inference",
+        "Monday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_inference_gpt2_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_gpt2",
+      "scripts": "scripts/migx_gpt2/",
+      "n_gpus": "1",
+      "owner": "christopher.austen@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_gpt2.csv",
+      "tags": [
+        "Inference",
+        "migx",
+        "migx-inference",
+        "Monday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_inference_bert_squad_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_bert_squad",
+      "scripts": "scripts/migx_bert_squad/",
+      "n_gpus": "1",
+      "owner": "christopher.austen@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_bert_squad.csv",
+      "tags": [
+        "Inference",
+        "midnight",
+        "migx-inference",
+        "migx"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_inference_resnet_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_resnet",
+      "scripts": "scripts/migx_resnet/",
+      "n_gpus": "1",
+      "owner": "christopher.austen@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_resnet.csv",
+      "tags": [
+        "Inference",
+        "midnight",
+        "migx-inference",
+        "migx"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_inference_bert_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt",
+      "scripts": "scripts/migx_onnxrt/",
+      "n_gpus": "1",
+      "owner": "christopher.austen@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_onnxrt.csv",
+      "tags": [
+        "Inference",
+        "migx",
+        "migx-inference",
+        "Tuesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_inference_bert_quant_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt",
+      "scripts": "scripts/migx_onnxrt_bert_base_cased_quant/",
+      "n_gpus": "1",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_onnxrt_bert_based_cased_quant.csv",
+      "tags": [
+        "Inference",
+        "migx",
+        "migx-inference",
+        "migx-quant",
+        "Tuesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_inference_bert_distil_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt",
+      "scripts": "scripts/migx_onnxrt_distilbert/",
+      "n_gpus": "1",
+      "owner": "christopher.austen@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_onnxrt_distil.csv",
+      "tags": [
+        "Inference",
+        "midnight",
+        "migx-inference",
+        "migx"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_inference_bert_distil_quant_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt",
+      "scripts": "scripts/migx_onnxrt_distilbert_quant",
+      "n_gpus": "1",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_onnxrt_distil_quant.csv",
+      "tags": [
+        "Inference",
+        "midnight",
+        "migx-inference",
+        "migx",
+        "migx-quant"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_onnxrt_resnet50_v1_5_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt",
+      "scripts": "scripts/migx_onnxrt_resnet50_v1_5/",
+      "n_gpus": "1",
+      "data": "migx_ort_resnet_quant_e2e",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_onnxrt_resnet50_v1_5.csv",
+      "tags": [
+        "Inference",
+        "midnight",
+        "migx-inference",
+        "migx"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_onnxrt_resnet50_v1_5_fp16_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt",
+      "scripts": "scripts/migx_onnxrt_resnet50_v1_5_fp16/",
+      "n_gpus": "1",
+      "data": "migx_ort_resnet_quant_e2e",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_onnxrt_resnet50_v1_5_fp16.csv",
+      "tags": [
+        "Inference",
+        "midnight",
+        "migx-inference",
+        "migx"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_onnxrt_inception_v3_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt",
+      "scripts": "scripts/migx_onnxrt_inception_v3/",
+      "n_gpus": "1",
+      "data": "migx_ort_resnet_quant_e2e",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_onnxrt_inception_v3.csv",
+      "tags": [
+        "Inference",
+        "midnight",
+        "migx-inference",
+        "migx"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_onnxrt_inception_v3_fp16_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt",
+      "scripts": "scripts/migx_onnxrt_inception_v3_fp16/",
+      "n_gpus": "1",
+      "data": "migx_ort_resnet_quant_e2e",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_onnxrt_inception_v3_fp16.csv",
+      "tags": [
+        "Inference",
+        "midnight",
+        "migx-inference",
+        "migx"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_onnxrt_gpt2_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt",
+      "scripts": "scripts/migx_onnxrt_gpt2/",
+      "n_gpus": "1",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_onnxrt_gpt2.csv",
+      "tags": [
+        "Inference",
+        "midnight",
+        "migx-inference",
+        "migx"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_onnxrt_gpt2_quant_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt",
+      "scripts": "scripts/migx_onnxrt_gpt2_quant/",
+      "n_gpus": "1",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_onnxrt_gpt2_quant.csv",
+      "tags": [
+        "Inference",
+        "midnight",
+        "migx-inference",
+        "migx-quant",
+        "migx"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_bert_large_uncased_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt",
+      "scripts": "scripts/migx_bert_large_uncased/",
+      "n_gpus": "1",
+      "owner": "christopher.austen@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_onnxrt_uncased.csv",
+      "tags": [
+        "Inference",
+        "migx",
+        "Wednesday",
+        "migx-inference"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_bert_large_uncased_quant_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt",
+      "scripts": "scripts/migx_onnxrt_bert_large_uncased_quant/",
+      "n_gpus": "1",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_migx_onnxrt_bert_large_quant.csv",
+      "tags": [
+        "Inference",
+        "migx",
+        "Wednesday",
+        "migx-inference",
+        "migx-quant"
+      ],
+      "args": ""
+    },
+    {
+      "name": "migx_onnxrt_gpt_attention_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt_gpt_attention_benchmarks",
+      "scripts": "scripts/migx_onnxrt_gpt_attention_benchmarks",
+      "n_gpus": "1",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "migx",
+        "Wednesday",
+        "migx-acc"
+      ],
+      "args": "",
+      "multiple_results": "perf_migx_gpt_attention_benchmarks.csv"
+    },
+    {
+      "name": "migx_onnxrt_layernorm_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt_layernorm_benchmarks",
+      "scripts": "scripts/migx_onnxrt_layernorm_benchmarks",
+      "n_gpus": "1",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "migx",
+        "Wednesday",
+        "migx-acc"
+      ],
+      "args": "",
+      "multiple_results": "perf_migx_layernorm_benchmarks.csv"
+    },
+    {
+      "name": "migx_onnxrt_gelu_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt_gelu_benchmarks",
+      "scripts": "scripts/migx_onnxrt_gelu_benchmarks",
+      "n_gpus": "1",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "migx",
+        "Wednesday",
+        "migx-acc"
+      ],
+      "args": "",
+      "multiple_results": "perf_migx_gelu_benchmarks.csv"
+    },
+    {
+      "name": "migx_onnxrt_conv_to_onnx_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt_conv_to_onnx_benchmarks",
+      "scripts": "scripts/migx_onnxrt_conv_to_onnx_benchmarks",
+      "n_gpus": "1",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "migx",
+        "Wednesday",
+        "migx-acc"
+      ],
+      "args": "",
+      "multiple_results": "perf_migx_conv_to_onnx_benchmarks.csv"
+    },
+    {
+      "name": "migx_onnxrt_unit_tests",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt_unit_tests",
+      "scripts": "scripts/migx_onnxrt_unit_tests",
+      "n_gpus": "1",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "tags": [
+        "unit-tests",
+        "migx",
+        "Wednesday",
+        "migx-acc"
+      ],
+      "args": "",
+      "multiple_results": "output_migx_onnxrt_unit_tests.csv"
+    },
+    {
+      "name": "migx_onnxrt_bert_base_squad_1v1_benchmarks",
+      "url": "https://github.com/microsoft/onnxruntime-inference-examples",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt_bert_base_squad_v1_1_benchmarks",
+      "scripts": "scripts/migx_onnxrt_bert_base_squad_v1_1_benchmarks",
+      "n_gpus": "1",
+      "data":"migx_bert_base_squad_1v1_model",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "migx",
+        "Wednesday",
+        "migx-acc"
+      ],
+      "args": "",
+      "multiple_results": "perf_migx_bert_base_squad_1v1_benchmarks.csv"
+    },
+    {
+      "name": "migx_onnxrt_bert_base_squad_1v1_fp16_benchmarks",
+      "url": "https://github.com/microsoft/onnxruntime-inference-examples",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt_bert_base_squad_v1_1_benchmarks",
+      "scripts": "scripts/migx_onnxrt_bert_base_squad_v1_1_benchmarks",
+      "n_gpus": "1",
+      "data":"migx_bert_base_squad_1v1_model",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "migx",
+        "Wednesday",
+        "migx-acc"
+      ],
+      "args": "--fp16",
+      "multiple_results": "perf_migx_bert_base_squad_1v1_fp16_benchmarks.csv"
+    },
+    {
+      "name": "migx_onnxrt_bert_distilled_benchmarks",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt_bert_distilled_benchmarks",
+      "scripts": "scripts/migx_onnxrt_bert_distilled_benchmarks",
+      "n_gpus": "1",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "migx",
+        "Wednesday",
+        "migx-acc"
+      ],
+      "args": "",
+      "multiple_results": "perf_migx_bert_distilled_benchmarks.csv"
+    },
+    {
+      "name": "migx_onnxrt_resnet_quant_e2e",
+      "url": "https://github.com/ROCmSoftwarePlatform/AMDMIGraphX",
+      "dockerfile": "docker/migx_onnxrt",
+      "dockercontext": "scripts/migx_onnxrt_resnet_quant_e2e",
+      "scripts": "scripts/migx_onnxrt_resnet_quant_e2e",
+      "data": "migx_ort_resnet_quant_e2e,resnet50_v2_7_onnx",
+      "n_gpus": "1",
+      "owner": "ted.themistokleous@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "migx",
+        "Wednesday",
+        "migx-quant"
+      ],
+      "args": "",
+      "multiple_results": "perf_migx_resnet_quant_e2e_benchmarks.csv"
+    },
+    {
+      "name": "migx_timm_inference_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/migx_pt2_benchmarks",
+      "scripts": "scripts/migx_pt2_benchmarks",
+      "n_gpus": "1",
+      "owner": "Shivad.Bhavsar@amd.com",
+      "training_precision": "",
+      "timeout": 43200,
+      "tags": [
+        "migx_pt2",
+        "migx_pt2_dashboard",
+        "migx_pt2_timm"
+      ],
+      "args": "timm_models",
+      "multiple_results": "migx_timm_inference_benchmarks.csv"
+    },
+    {
+      "name": "migx_torchbench_inference_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/migx_pt2_benchmarks",
+      "scripts": "scripts/migx_pt2_benchmarks",
+      "n_gpus": "1",
+      "owner": "Shivad.Bhavsar@amd.com",
+      "training_precision": "",
+      "timeout": 43200,
+      "tags": [
+        "migx_pt2",
+        "migx_pt2_dashboard",
+        "migx_pt2_torchbench"
+      ],
+      "args": "torchbench",
+      "multiple_results": "migx_torchbench_inference_benchmarks.csv"
+    },
+    {
+      "name": "migx_huggingface_inference_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/migx_pt2_benchmarks",
+      "scripts": "scripts/migx_pt2_benchmarks",
+      "n_gpus": "1",
+      "owner": "Shivad.Bhavsar@amd.com",
+      "training_precision": "",
+      "timeout": 43200,
+      "tags": [
+        "migx_pt2",
+        "migx_pt2_dashboard",
+        "migx_pt2_huggingface"
+      ],
+      "args": "huggingface",
+      "multiple_results": "migx_huggingface_inference_benchmarks.csv"
+    },
+    {
+      "name": "pyt_openmmlab_bevt",
+      "url": "https://github.com/facebookresearch/FAMBench",
+      "dockerfile": "docker/pyt_openmmlab",
+      "scripts": "scripts/pyt_openmmlab_bevt/run.sh",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "openmmlab",
+        "bevt",
+        "fambench",
+        "Thursday",
+        "exec_dashboard"
+      ],
+      "args": "",
+      "multiple_results": "results_bevt.csv"
+    },
+    {
+      "name": "pyt_train_huggingface_gpt2",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_gpt2/train.sh",
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "huggingface",
+        "gpt2",
+        "Friday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_train_huggingface_deberta",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_deberta-v2-xxlarge/train.sh",
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "huggingface",
+        "deberta",
+        "Saturday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_train_huggingface_distilbert",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_distilbert-base/train.sh",
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "huggingface",
+        "distilbert",
+        "Sunday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_train_huggingface_bart",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_bart/train.sh",
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "huggingface",
+        "bart",
+        "Monday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_train_huggingface_bert",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_bert/train.sh",
+      "data": "huggingface",
+      "timeout": 40800,
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "huggingface",
+        "bert",
+        "Tuesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_train_huggingface_roberta",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_roberta-large/train.sh",
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "huggingface",
+        "roberta",
+        "Wednesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_mlperf_resnet50v1.5_fp16",
+      "url": "https://github.com/pytorch/vision",
+      "dockerfile": "docker/pyt_torchvision",
+      "scripts": "scripts/pyt_mlperf_resnet50v1.5/train_fp16.sh",
+      "timeout": 36000,
+      "data": "ilsvrc_imagenet",
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf",
+        "resnet50v1.5_fp16",
+        "Thursday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_mlperf_resnet50v1.5_fp16_stanford",
+      "url": "https://github.com/pytorch/vision",
+      "dockerfile": "docker/pyt_torchvision",
+      "scripts": "scripts/pyt_mlperf_resnet50v1.5/train_fp16.sh",
+      "timeout": 36000,
+      "data": "stanford_tiny_imagenet_200",
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf",
+        "resnet50v1.5_fp16",
+        "Thursday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_mlperf_v1.1_resnet50v1.5_fp32",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_resnet50v1.5/train.sh",
+      "data": "ilsvrc_imagenet",
+      "timeout": 36000,
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "fp32",
+        "pyt_mlperf_v1.1_resnet50v1.5",
+        "pyt",
+        "mlperf_v1.1",
+        "resnet50v1.5",
+        "Friday",
+        "miopen"
+      ],
+      "args": "",
+      "multiple_results": "results_mlperf_v1.1_resnet50v1.5.csv"
+    },
+    {
+      "name": "pyt_mlperf_v1.1_resnet50v1.5_fp32_stanford",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_resnet50v1.5/train.sh",
+      "data": "stanford_tiny_imagenet_200",
+      "timeout": 36000,
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "fp32",
+        "pyt_mlperf_v1.1_resnet50v1.5",
+        "pyt",
+        "mlperf_v1.1",
+        "resnet50v1.5",
+        "Friday",
+        "miopen"
+      ],
+      "args": "",
+      "multiple_results": "results_mlperf_v1.1_resnet50v1.5.csv"
+    },
+    {
+      "name": "pyt_mlperf_v1.1_resnet50v1.5_fp16_nchw",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_resnet50v1.5/train.sh",
+      "data": "ilsvrc_imagenet",
+      "timeout": 36000,
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "fp16",
+        "pyt_mlperf_v1.1_resnet50v1.5",
+        "pyt",
+        "mlperf_v1.1",
+        "resnet50v1.5",
+        "Saturday",
+        "miopen"
+      ],
+      "args": "FP16_NCHW",
+      "multiple_results": "results_mlperf_v1.1_resnet50v1.5.csv"
+    },
+    {
+      "name": "pyt_mlperf_v1.1_resnet50v1.5_fp16_nchw_stanford",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_resnet50v1.5/train.sh",
+      "data": "stanford_tiny_imagenet_200",
+      "timeout": 36000,
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "fp16",
+        "pyt_mlperf_v1.1_resnet50v1.5",
+        "pyt",
+        "mlperf_v1.1",
+        "resnet50v1.5",
+        "Saturday",
+        "miopen"
+      ],
+      "args": "FP16_NCHW",
+      "multiple_results": "results_mlperf_v1.1_resnet50v1.5.csv"
+    },
+    {
+      "name": "pyt_mlperf_v1.1_resnet50v1.5_fp16_nhwc",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_resnet50v1.5/train.sh",
+      "data": "ilsvrc_imagenet",
+      "timeout": 36000,
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "fp16",
+        "pyt_mlperf_v1.1_resnet50v1.5",
+        "pyt",
+        "mlperf_v1.1",
+        "resnet50v1.5",
+        "Sunday",
+        "miopen"
+      ],
+      "args": "FP16_NHWC",
+      "multiple_results": "results_mlperf_v1.1_resnet50v1.5.csv"
+    },
+    {
+      "name": "pyt_mlperf_v1.1_resnet50v1.5_fp16_nhwc_stanford",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_resnet50v1.5/train.sh",
+      "data": "stanford_tiny_imagenet_200",
+      "timeout": 36000,
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "fp16",
+        "pyt_mlperf_v1.1_resnet50v1.5",
+        "pyt",
+        "mlperf_v1.1",
+        "resnet50v1.5",
+        "Sunday",
+        "miopen"
+      ],
+      "args": "FP16_NHWC",
+      "multiple_results": "results_mlperf_v1.1_resnet50v1.5.csv"
+    },
+    {
+      "name": "pyt_fambench_xlm-r",
+      "url": "https://github.com/facebookresearch/FAMBench",
+      "dockerfile": "docker/pyt_fambench",
+      "scripts": "scripts/pyt_fambench_xlm-r/train.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "tags": [
+        "xlm-r",
+        "fambench",
+        "Monday",
+        "exec_dashboard"
+      ],
+      "args": "",
+      "multiple_results": "results_xlm-r.csv"
+    },
+    {
+      "name": "pyt_fambench_ubench_dlrm",
+      "url": "https://github.com/facebookresearch/FAMBench",
+      "dockerfile": "docker/pyt_fambench",
+      "scripts": "scripts/pyt_fambench_dlrm/train_ubench.sh",
+      "n_gpus": "-1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ubench_dlrm",
+        "fambench",
+        "Tuesday"
+      ],
+      "args": "",
+      "multiple_results": "results_ubench_dlrm.csv"
+    },
+    {
+      "name": "pyt_fambench_dlrm",
+      "url": "https://github.com/facebookresearch/FAMBench",
+      "dockerfile": "docker/pyt_fambench",
+      "scripts": "scripts/pyt_fambench_dlrm/train.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dlrm",
+        "fambench",
+        "Wednesday",
+        "exec_dashboard"
+      ],
+      "args": "",
+      "multiple_results": "results_dlrm.csv"
+    },
+    {
+      "name": "pyt_fambench_cvt",
+      "url": "https://github.com/facebookresearch/FAMBench",
+      "dockerfile": "docker/pyt_fambench",
+      "scripts": "scripts/pyt_fambench_cvt/train.sh",
+      "n_gpus": "-1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 36000,
+      "tags": [
+        "cvt",
+        "fambench",
+        "Thursday"
+      ],
+      "args": "",
+      "multiple_results": "results_cvt.csv"
+    },
+    {
+      "name": "pyt_fambench_oscar",
+      "url": "https://github.com/facebookresearch/FAMBench",
+      "dockerfile": "docker/pyt_fambench",
+      "scripts": "scripts/pyt_fambench_oscar/train.sh",
+      "n_gpus": "-1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "tags": [
+        "oscar",
+        "fambench",
+        "Friday",
+        "exec_dashboard"
+      ],
+      "args": "",
+      "multiple_results": "results_oscar.csv"
+    },
+    {
+      "name": "pyt_mlperf_resnet50v1.5_fp32",
+      "url": "https://github.com/pytorch/vision",
+      "dockerfile": "docker/pyt_torchvision",
+      "scripts": "scripts/pyt_mlperf_resnet50v1.5/train_fp32.sh",
+      "n_gpus": "-1",
+      "data": "ilsvrc_imagenet",
+      "timeout": 36000,
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf",
+        "resnet50v1.5_fp32",
+        "Saturday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_mlperf_resnet50v1.5_fp32_stanford",
+      "url": "https://github.com/pytorch/vision",
+      "dockerfile": "docker/pyt_torchvision",
+      "scripts": "scripts/pyt_mlperf_resnet50v1.5/train_fp32.sh",
+      "n_gpus": "-1",
+      "data": "stanford_tiny_imagenet_200",
+      "timeout": 36000,
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf",
+        "resnet50v1.5_fp32",
+        "Saturday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_torchvision_mobilenet",
+      "url": "https://github.com/pytorch/vision",
+      "dockerfile": "docker/pyt_torchvision",
+      "scripts": "scripts/pyt_torchvision_mobilenet",
+      "data": "stanford_tiny_imagenet_200",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "torchvision",
+        "mobilenet",
+        "Sunday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_torchvision_alexnet",
+      "url": "https://github.com/pytorch/vision",
+      "dockerfile": "docker/pyt_torchvision",
+      "scripts": "scripts/pyt_torchvision_alexnet",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "torchvision",
+        "alexnet",
+        "miopen",
+        "Monday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_torchvision_vgg16",
+      "url": "https://github.com/pytorch/vision",
+      "dockerfile": "docker/pyt_torchvision",
+      "scripts": "scripts/pyt_torchvision_vgg16",
+      "n_gpus": "4",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "torchvision",
+        "vgg16",
+        "Tuesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_torchvision_vgg19",
+      "url": "https://github.com/pytorch/vision",
+      "dockerfile": "docker/pyt_torchvision",
+      "scripts": "scripts/pyt_torchvision_vgg19",
+      "n_gpus": "4",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "torchvision",
+        "vgg19",
+        "Wednesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_classyvision_resnext3d",
+      "url": "https://github.com/ROCmSoftwarePlatform/ClassyVision",
+      "dockerfile": "docker/pyt_torchvision",
+      "scripts": "scripts/pyt_classyvision_resnext3d",
+      "n_gpus": "4",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "classyvision",
+        "resnext3d",
+        "Thursday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_mlperf_dlrm",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_dlrm/train.sh",
+      "data": "criteo_terabyte_mlperf_bin_split_pytorch",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf",
+        "dlrm",
+        "fp32",
+        "Friday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_mlperf_v1.1_dlrm_fp32",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_dlrm/train.sh",
+      "data": "criteo_terabyte_mlperf_bin_split_pytorch",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf_v1.1",
+        "dlrm",
+        "fp32",
+        "Saturday"
+      ],
+      "args": "",
+      "multiple_results": "results_mlperf_v1.1_dlrm.csv"
+    },
+    {
+      "name": "pyt_mlperf_v1.1_dlrm_fp16",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_dlrm/train.sh",
+      "data": "criteo_terabyte_mlperf_bin_split_pytorch",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf_v1.1",
+        "dlrm",
+        "fp16",
+        "Sunday"
+      ],
+      "args": "FP16",
+      "multiple_results": "results_mlperf_v1.1_dlrm.csv"
+    },
+    {
+      "name": "pyt_mlperf_transformer",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_transformer/train.sh",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf",
+        "transformer",
+        "fp32",
+        "Monday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_mlperf_ssd",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_ssd/train.sh",
+      "data": "coco2017",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf",
+        "ssd",
+        "fp32",
+        "Tuesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_mlperf_v1.1_ssd_fp32",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_ssd/train.sh",
+      "data": "coco2017",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf_v1.1",
+        "ssd",
+        "fp32",
+        "Wednesday"
+      ],
+      "args": "",
+      "multiple_results": "pyt_mlperf_v1.1_ssd.csv"
+    },
+    {
+      "name": "pyt_mlperf_v1.1_ssd_fp16_nchw",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_ssd/train.sh",
+      "data": "coco2017",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf_v1.1",
+        "ssd",
+        "fp16",
+        "nchw",
+        "Thursday"
+      ],
+      "args": "FP16_NCHW",
+      "multiple_results": "pyt_mlperf_v1.1_ssd.csv"
+    },
+    {
+      "name": "pyt_mlperf_v1.1_ssd_fp16_nhwc",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_ssd/train.sh",
+      "data": "coco2017",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf_v1.1",
+        "ssd",
+        "fp16",
+        "nhwc",
+        "Friday"
+      ],
+      "args": "FP16_NHWC",
+      "multiple_results": "pyt_mlperf_v1.1_ssd.csv"
+    },
+    {
+      "name": "pyt_mlperf_v1.1_maskrcnn_nhwc",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_maskrcnn/train.sh",
+      "data": "coco2017",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp16",
+      "timeout": 43200,
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf_v1.1",
+        "maskrcnn",
+        "fp16",
+        "nhwc",
+        "Sunday"
+      ],
+      "args": "FP16_NHWC"
+    },
+    {
+      "name": "pyt_mlperf_v1.1_maskrcnn_nchw",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_maskrcnn/train.sh",
+      "data": "coco2017",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp16",
+      "timeout": 43200,
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf_v1.1",
+        "maskrcnn",
+        "fp16",
+        "nchw",
+        "Sunday"
+      ],
+      "args": "FP16_NCHW"
+    },
+    {
+      "name": "pyt_mlperf_bert",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_bert/train.sh",
+      "data": "bert-mlperf",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf",
+        "bert",
+        "fp32",
+        "Saturday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_mlperf_v1.1_bert_fp32",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_bert/train.sh",
+      "data": "bert-mlperf-v1.1",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp32",
+      "timeout": 16200,
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf_v1.1",
+        "bert",
+        "fp32",
+        "Sunday"
+      ],
+      "args": "",
+      "multiple_results": "results_mlperf_v1.1_bert.csv"
+    },
+    {
+      "name": "pyt_mlperf_v1.1_bert_fp16",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v1.1_bert/train.sh",
+      "data": "bert-mlperf-v1.1",
+      "n_gpus": "-1",
+      "owner": "zachary.streeter@amd.com",
+      "training_precision": "fp32",
+      "timeout": 16200,
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf_v1.1",
+        "bert",
+        "fp16",
+        "Monday"
+      ],
+      "args": "FP16",
+      "multiple_results": "results_mlperf_v1.1_bert.csv"
+    },
+    {
+      "name": "pyt_mlperf_v2.0_bert_fp16",
+      "url": "https://github.com/AMD-ACP/MLPerf",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_mlperf",
+      "scripts": "scripts/pyt_mlperf_v2.0_bert/train.sh",
+      "data": "bert-mlperf-v1.1",
+      "n_gpus": "-1",
+      "owner": "wunhuang@amd.com",
+      "training_precision": "fp16",
+      "timeout": 43200,
+      "tags": [
+        "training",
+        "pyt",
+        "mlperf_v2.0",
+        "bert",
+        "fp16"
+      ],
+      "args": "FP16 0",
+      "multiple_results": "results_mlperf_v2.0_bert.csv"
+    },
+    {
+      "name": "pyt_fambench_moe_tiny_1gpu",
+      "url": "https://github.com/pnunna93/FAMBench",
+      "dockerfile": "docker/pyt_fambench_moe",
+      "scripts": "scripts/pyt_fambench_moe/run.sh",
+      "data": "fambench_moe",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "moe",
+        "fambench",
+        "Tuesday"
+      ],
+      "args": "tiny"
+    },
+    {
+      "name": "pyt_fambench_moe_tiny_multigpu",
+      "url": "https://github.com/pnunna93/FAMBench",
+      "dockerfile": "docker/pyt_fambench_moe",
+      "scripts": "scripts/pyt_fambench_moe/run.sh",
+      "data": "fambench_moe",
+      "n_gpus": "-1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "moe",
+        "fambench",
+        "Tuesday",
+        "exec_dashboard"
+      ],
+      "args": "tiny"
+    },
+    {
+      "name": "pyt_fambench_moe_big_1gpu",
+      "url": "https://github.com/pnunna93/FAMBench",
+      "dockerfile": "docker/pyt_fambench_moe",
+      "scripts": "scripts/pyt_fambench_moe/run.sh",
+      "data": "fambench_moe",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "moe",
+        "fambench",
+        "Tuesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_fambench_moe_big_multigpu",
+      "url": "https://github.com/pnunna93/FAMBench",
+      "dockerfile": "docker/pyt_fambench_moe",
+      "scripts": "scripts/pyt_fambench_moe/run.sh",
+      "data": "fambench_moe",
+      "n_gpus": "-1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 20400,
+      "tags": [
+        "moe",
+        "fambench",
+        "Tuesday",
+        "exec_dashboard"
+      ],
+      "args": ""
+    },
+    {
+      "name": "tf2_huggingface_albert",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/tf2_huggingface_sequence",
+      "scripts": "scripts/tf2_huggingface_albert",
+      "n_gpus": "4",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "",
+      "tags": [
+        "tf2",
+        "albert",
+        "Wednesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "tf2_huggingface_bert",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/tf2_huggingface_sequence",
+      "scripts": "scripts/tf2_huggingface_bert",
+      "n_gpus": "4",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "",
+      "tags": [
+        "tf2",
+        "bert",
+        "Thursday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "tf2_huggingface_distilbert",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/tf2_huggingface_sequence",
+      "scripts": "scripts/tf2_huggingface_distilbert",
+      "n_gpus": "4",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "",
+      "tags": [
+        "midnight",
+        "tf2",
+        "bert"
+      ],
+      "args": ""
+    },
+    {
+      "name": "tf2_huggingface_gpt2",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/tf2_huggingface_gpt2",
+      "scripts": "scripts/tf2_huggingface_gpt2",
+      "n_gpus": "2",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "",
+      "tags": [
+        "tf2",
+        "gpt2",
+        "Friday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "tf2_huggingface_distilgpt2",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/tf2_huggingface_sequence",
+      "scripts": "scripts/tf2_huggingface_distilgpt2",
+      "n_gpus": "4",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "",
+      "tags": [
+        "midnight",
+        "tf2",
+        "distilgpt2"
+      ],
+      "args": ""
+    },
+    {
+      "name": "tf2_huggingface_xlm",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/tf2_huggingface_sequence",
+      "scripts": "scripts/tf2_huggingface_xlm",
+      "n_gpus": "4",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "",
+      "tags": [
+        "tf2",
+        "xlm",
+        "Saturday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "tf2_nv_resnext101",
+      "url": "https://github.com/ROCmSoftwarePlatform/tensorflow-benchmark",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/tf2_nv_resnext101",
+      "scripts": "scripts/tf2_nv_resnext101",
+      "n_gpus": "1",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "midnight",
+        "tf2",
+        "fp32",
+        "resnext101"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_pegasus",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_pegasus/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "pegasus",
+        "centos",
+        "ubuntu",
+        "Monday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_distilbart_cnn",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_distilbart_cnn/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "distilbart_cnn",
+        "centos",
+        "ubuntu",
+        "Tuesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "library_bench_rocblas_bf16",
+      "url": "https://github.com/ROCmSoftwarePlatform/rocBLAS",
+      "dockerfile": "docker/library_benchmarks",
+      "scripts": "scripts/library_benchmarks/run_rocblas-bench.sh",
+      "n_gpus": "1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "library_benchmarks",
+        "Wednesday"
+      ],
+      "args": "bf16"
+    },
+    {
+      "name": "library_bench_rocblas_f8",
+      "url": "https://github.com/ROCmSoftwarePlatform/rocBLAS",
+      "dockerfile": "docker/library_benchmarks",
+      "scripts": "scripts/library_benchmarks/run_rocblas-bench.sh",
+      "n_gpus": "1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "library_benchmarks",
+        "Wednesday"
+      ],
+      "args": "f8"
+    },
+    {
+      "name": "library_bench_babelstream",
+      "url": "ssh://gerrit-git.amd.com:29418/ast/ec/shoreline/BabelStream",
+      "cred": "gerrit-git.amd.com",
+      "dockerfile": "docker/pyt",
+      "scripts": "scripts/library_benchmarks/run_babelstream.sh",
+      "n_gpus": "1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "library_benchmarks",
+        "Wednesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pt2_huggingface_training_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pt2_benchmarks",
+      "scripts": "scripts/pt2_benchmarks",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "pt2",
+        "pt2_dashboard"
+      ],
+      "args": "--suites=huggingface --dtype amp --training --compilers inductor",
+      "multiple_results": "pt2_huggingface_training_benchmarks.csv"
+    },
+    {
+      "name": "pt2_huggingface_training_no_cudagraphs_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pt2_benchmarks",
+      "scripts": "scripts/pt2_benchmarks",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "pt2",
+        "pt2_dashboard"
+      ],
+      "args": "--suites=huggingface --dtype amp --training --compilers inductor_no_cudagraphs",
+      "multiple_results": "pt2_huggingface_training_no_cudagraphs_benchmarks.csv"
+    },
+    {
+      "name": "pt2_huggingface_inference_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pt2_benchmarks",
+      "scripts": "scripts/pt2_benchmarks",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "pt2",
+        "pt2_dashboard"
+      ],
+      "args": "--suites=huggingface --dtype amp --inference --compilers inductor",
+      "multiple_results": "pt2_huggingface_inference_benchmarks.csv"
+    },
+    {
+      "name": "pt2_huggingface_inference_no_cudagraphs_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pt2_benchmarks",
+      "scripts": "scripts/pt2_benchmarks",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "pt2",
+        "pt2_dashboard"
+      ],
+      "args": "--suites=huggingface --dtype amp --inference --compilers inductor_no_cudagraphs",
+      "multiple_results": "pt2_huggingface_inference_benchmarks.csv"
+    },
+    {
+      "name": "pt2_timm_training_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pt2_benchmarks",
+      "scripts": "scripts/pt2_benchmarks",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 21600,
+      "tags": [
+        "pt2",
+        "pt2_dashboard"
+      ],
+      "args": "--suites=timm_models --dtype amp --training --compilers inductor",
+      "multiple_results": "pt2_timm_training_benchmarks.csv"
+    },
+    {
+      "name": "pt2_timm_training_no_cudagraphs_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pt2_benchmarks",
+      "scripts": "scripts/pt2_benchmarks",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 21600,
+      "tags": [
+        "pt2",
+        "pt2_dashboard"
+      ],
+      "args": "--suites=timm_models --dtype amp --training --compilers inductor_no_cudagraphs",
+      "multiple_results": "pt2_timm_training_no_cudagraphs_benchmarks.csv"
+    },
+    {
+      "name": "pt2_timm_inference_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pt2_benchmarks",
+      "scripts": "scripts/pt2_benchmarks",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 21600,
+      "tags": [
+        "pt2",
+        "pt2_dashboard"
+      ],
+      "args": "--suites=timm_models --dtype amp --inference --compilers inductor",
+      "multiple_results": "pt2_timm_inference_benchmarks.csv"
+    },
+    {
+      "name": "pt2_timm_inference_no_cudagraphs_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pt2_benchmarks",
+      "scripts": "scripts/pt2_benchmarks",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 21600,
+      "tags": [
+        "pt2",
+        "pt2_dashboard"
+      ],
+      "args": "--suites=timm_models --dtype amp --inference --compilers inductor_no_cudagraphs",
+      "multiple_results": "pt2_timm_inference_benchmarks.csv"
+    },
+    {
+      "name": "pt2_torchbench_training_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pt2_benchmarks",
+      "scripts": "scripts/pt2_benchmarks",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "pt2",
+        "pt2_dashboard"
+      ],
+      "args": "--suites=torchbench --dtype amp --training --compilers inductor",
+      "multiple_results": "pt2_torchbench_training_benchmarks.csv"
+    },
+    {
+      "name": "pt2_torchbench_training_no_cudagraphs_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pt2_benchmarks",
+      "scripts": "scripts/pt2_benchmarks",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 21600,
+      "tags": [
+        "pt2",
+        "pt2_dashboard"
+      ],
+      "args": "--suites=torchbench --dtype amp --training --compilers inductor_no_cudagraphs",
+      "multiple_results": "pt2_torchbench_training_no_cudagraphs_benchmarks.csv"
+    },
+    {
+      "name": "pt2_torchbench_inference_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pt2_benchmarks",
+      "scripts": "scripts/pt2_benchmarks",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "pt2",
+        "pt2_dashboard"
+      ],
+      "args": "--suites=torchbench --dtype amp --inference --compilers inductor",
+      "multiple_results": "pt2_torchbench_inference_benchmarks.csv"
+    },
+    {
+      "name": "pt2_torchbench_inference_no_cudagraphs_benchmarks",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pt2_benchmarks",
+      "scripts": "scripts/pt2_benchmarks",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "pt2",
+        "pt2_dashboard"
+      ],
+      "args": "--suites=torchbench --dtype amp --inference --compilers inductor_no_cudagraphs",
+      "multiple_results": "pt2_torchbench_inference_benchmarks.csv"
+    },
+    {
+      "name": "ort_huggingface_bert_base",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_bert/run.sh",
+      "data": "huggingface",
+      "n_gpus": "-1",
+      "owner": "jack.hu@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "bert",
+        "Thursday",
+        "mainline"
+      ],
+      "args": "--ort --model-name=bert-base-uncased"
+    },
+    {
+      "name": "ort_huggingface_bert_base_fp32",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_bert/run.sh",
+      "data": "huggingface",
+      "n_gpus": "-1",
+      "owner": "jack.hu@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "bert",
+        "Thursday",
+        "mainline"
+      ],
+      "args": "--ort --precision=fp32 --model-name=bert-base-uncased"
+    },
+    {
+      "name": "pyt_huggingface_bert_base",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_bert/run.sh",
+      "data": "huggingface",
+      "n_gpus": "-1",
+      "owner": "jack.hu@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bert",
+        "Wednesday"
+      ],
+      "args": "--model-name=bert-base-uncased"
+    },
+    {
+      "name": "pyt_huggingface_bert",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_bert/run.sh",
+      "data": "huggingface",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bert",
+        "Wednesday",
+        "exec_dashboard"
+      ],
+      "args": "--model-name=bert-large-uncased"
+    },
+    {
+      "name": "pyt_huggingface_bert_fp32",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_bert/run.sh",
+      "data": "huggingface",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bert",
+        "centos",
+        "ubuntu",
+        "Wednesday"
+      ],
+      "args": "--precision=fp32 --model-name=bert-large-uncased"
+    },
+    {
+      "name": "pyt_huggingface_bert_bf16",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_bert/run.sh",
+      "data": "huggingface",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bert",
+        "centos",
+        "ubuntu",
+        "Wednesday"
+      ],
+      "args": "--precision=bf16 --model-name=bert-large-uncased"
+    },
+    {
+      "name": "pyt_huggingface_hubert",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface_hubert",
+      "scripts": "scripts/huggingface_hubert/run.sh",
+      "data": "huggingface",
+      "n_gpus": "-1",
+      "owner": "andy.friedrich@amd.com",
+      "training_precision": "",
+      "timeout": 36000,
+      "tags": [
+        "pyt",
+        "hubert",
+        "ubuntu",
+        "Thursday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_bart",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_bart/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bart",
+        "centos",
+        "ubuntu",
+        "Thursday",
+        "exec_dashboard"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_distilbert-base",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_distilbert-base/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "midnight",
+        "pyt",
+        "distilbert",
+        "centos",
+        "ubuntu",
+        "exec_dashboard",
+        "mainline"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_t5-large",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_t5-large/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "transformer",
+        "centos",
+        "ubuntu",
+        "Friday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_deberta-v2-xxlarge",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_deberta-v2-xxlarge/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "debertaxxl",
+        "centos",
+        "ubuntu",
+        "Saturday",
+        "exec_dashboard",
+        "mainline"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_gpt_neo",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_gpt_neo/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "fp16",
+      "tags": [
+        "pyt",
+        "fp16",
+        "gpt_neo",
+        "centos",
+        "ubuntu",
+        "Sunday",
+        "exec_dashboard"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_gpt2",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_gpt2/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "fp16",
+      "tags": [
+        "pyt",
+        "fp16",
+        "gpt2",
+        "centos",
+        "ubuntu",
+        "Monday",
+        "exec_dashboard",
+        "mainline"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_gpt2_fp32",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_gpt2/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "pyt",
+        "fp32",
+        "gpt2",
+        "Monday"
+      ],
+      "args": "--precision=fp32 "
+    },
+    {
+      "name": "pyt_huggingface_gpt2_bf16",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_gpt2/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "bf16",
+      "tags": [
+        "pyt",
+        "bf16",
+        "gpt2",
+        "centos",
+        "ubuntu",
+        "Monday"
+      ],
+      "args": "--precision=bf16"
+    },
+    {
+      "name": "dummy",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run.sh",
+      "n_gpus": "1",
+      "owner": "mmelesse@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies",
+        "dummy_test_group_1"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy2",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run.sh",
+      "n_gpus": "1",
+      "owner": "mmelesse@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies",
+        "dummy_test_group_1",
+        "dummy_test_group_2"
+      ],
+      "args": "",
+      "timeout": 360
+    },
+    {
+      "name": "dummy3",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run.sh",
+      "n_gpus": "1",
+      "owner": "mmelesse@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies",
+        "dummy_test_group_2"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_sleep",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_sleep.sh",
+      "n_gpus": "1",
+      "owner": "mmelesse@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": "300",
+      "timeout": 120
+    },
+    {
+      "name": "dummy_cred_https",
+      "url": "https://github.com/ROCmSoftwarePlatform/frameworks-internal",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run.sh",
+      "n_gpus": "1",
+      "owner": "mmelesse@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_prof",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_prof.sh",
+      "n_gpus": "1",
+      "owner": "mmelesse@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_prof_rccl",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_nccl_trace.sh",
+      "n_gpus": "1",
+      "owner": "mmelesse@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_ctxtest",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy_ctxtest",
+      "scripts": "scripts/dummy/run_ctxtest.sh",
+      "n_gpus": "1",
+      "owner": "mmelesse@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_mountpath",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_data_local.sh",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_gpubind",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_gpu_bind.sh",
+      "n_gpus": "6",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": "",
+      "multiple_results": "results_dummy_gpubind.csv"
+    },
+    {
+      "name": "dummy_cpubind",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_cpu_bind.sh",
+      "n_gpus": "1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": "",
+      "multiple_results": "results_dummy_cpubind.csv"
+    },
+    {
+      "name": "dummy_none",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_none.sh",
+      "n_gpus": "1",
+      "owner": "mmelesse@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_exception",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_multi.sh",
+      "n_gpus": "1",
+      "owner": "mmelesse@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": "--exception"
+    },
+    {
+      "name": "dummy_fail",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_fail.sh",
+      "n_gpus": "1",
+      "owner": "mmelesse@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_multi",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_multi.sh",
+      "n_gpus": "1",
+      "owner": "mmelesse@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": "",
+      "multiple_results": "perf_dummy.csv"
+    },
+    {
+      "name": "dummy_data_custom",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_data_custom.sh",
+      "data": "dummy_data_custom",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies",
+        "dummy_data"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_data_custom_multi",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_data_custom_multi.sh",
+      "data": "dummy_data_custom,dummy_data_custom_tf",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies",
+        "dummy_data"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_data_local",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_data_local.sh",
+      "data": "dummy_data_local",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies",
+        "dummy_data"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_data_local_fail",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_data_local.sh",
+      "data": "dummy_data_local_fail",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies",
+        "dummy_data"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_data_precedence",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_data_custom.sh",
+      "data": "dummy_data_precedence",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies",
+        "dummy_data"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_data_austin_nas",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_data_nas.sh",
+      "data": "dummy_data_austin_nas",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies",
+        "dummy_data"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_data_santaclara_nas",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_data_nas.sh",
+      "data": "dummy_data_santaclara_nas",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies",
+        "dummy_data"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_data_santaclaraqts_nas",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_data_nas.sh",
+      "data": "dummy_data_santaclaraqts_nas",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies",
+        "dummy_data"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_data_aws",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_data_aws.sh",
+      "data": "dummy_data_aws",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies",
+        "dummy_data"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_pytorch",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_pytorch.sh",
+      "n_gpus": "1",
+      "owner": "jack.taylor@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": ""
+    },
+    {
+      "name": "dummy_triage_test",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/dummy",
+      "scripts": "scripts/dummy/run_triage_test.sh",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "dummies"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_megatron_bert",
+      "url": "https://github.com/ROCmSoftwarePlatform/Megatron",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_megatron_bert",
+      "scripts": "scripts/pyt_megatron_bert",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "midnight",
+        "pyt",
+        "megatron",
+        "bert"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_deepspeed_megatron_gpt2",
+      "url": "https://github.com/ROCmSoftwarePlatform/Megatron-LM",
+      "dockerfile": "docker/pyt_deepspeed_megatron_gpt2",
+      "scripts": "scripts/pyt_deepspeed_megatron_gpt2",
+      "data": "megatron_gpt2_v1.1.5",
+      "n_gpus": "8",
+      "owner": "ramyasai.ramineni@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "pyt",
+        "megatron",
+        "gpt2",
+        "Sunday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_deepspeed_megatron_gpt2_roctau",
+      "url": "https://github.com/ROCmSoftwarePlatform/Megatron-LM",
+      "dockerfile": "docker/pyt_deepspeed_megatron_gpt2_roctau",
+      "scripts": "scripts/pyt_deepspeed_megatron_gpt2_roctau",
+      "data": "megatron_gpt2_v1.1.5",
+      "n_gpus": "8",
+      "owner": "hubertlu@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Sunday",
+        "pyt",
+        "megatron",
+        "gpt2"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_deepspeed_megatron_gpt2_roctau.csv"
+    },
+    {
+      "name": "pyt_train_deepspeed_roberta",
+      "url": "https://github.com/ROCmSoftwarePlatform/DeepSpeed",
+      "dockerfile": "docker/pyt_deepspeed",
+      "scripts": "scripts/pyt_deepspeed_roberta/train.sh",
+      "n_gpus": "-1",
+      "owner": "AdrianAbeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "training",
+        "pyt",
+        "roberta",
+        "Monday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_train_deepspeed_megatron_gpt2",
+      "url": "https://github.com/ROCmSoftwarePlatform/Megatron-LM",
+      "dockerfile": "docker/pyt_deepspeed_megatron_gpt2",
+      "scripts": "scripts/pyt_deepspeed_megatron_gpt2/train.sh",
+      "data": "megatron_gpt2_v1.1.5",
+      "n_gpus": "-1",
+      "owner": "ramyasai.ramineni@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "training",
+        "pyt",
+        "megatron",
+        "gpt2",
+        "Tuesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "ds3_pyt_train_huggingface_opt_iml_max_30b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-iml-max-30b"
+    },
+    {
+      "name": "ds3_pyt_train_huggingface_opt_iml_30b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-iml-30b"
+    },
+    {
+      "name": "ds3_pyt_train_huggingface_opt_iml_max_1b3",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-iml-max-1.3b"
+    },
+    {
+      "name": "ds3_pyt_train_huggingface_opt_iml_1b3",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-iml-1.3b"
+    },
+    {
+      "name": "ds3_pyt_train_huggingface_opt_66b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/train.sh",
+      "data": "huggingface",
+      "timeout": 44000,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-66b"
+    },
+    {
+      "name": "ds3_pyt_train_huggingface_opt_30b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-30b"
+    },
+    {
+      "name": "ds3_pyt_train_huggingface_opt_13b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-13b"
+    },
+    {
+      "name": "ds3_pyt_train_huggingface_opt_6b7",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-6.7b"
+    },
+    {
+      "name": "ds3_pyt_train_huggingface_opt_2b7",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-2.7b"
+    },
+    {
+      "name": "ds3_pyt_train_huggingface_opt_1b3",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-1.3b"
+    },
+    {
+      "name": "ds3_pyt_train_huggingface_opt_350m",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-350m"
+    },
+    {
+      "name": "ds3_pyt_train_huggingface_opt_125m",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-125m"
+    },
+    {
+      "name": "pyt_huggingface_roberta-large",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface",
+      "scripts": "scripts/huggingface_roberta-large/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "roberta",
+        "centos",
+        "ubuntu",
+        "Wednesday",
+        "exec_dashboard"
+      ],
+      "args": ""
+    },
+    {
+      "name": "ort_nv_bert_base_benchmark_adam_fp16_seq128_sgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-base-uncased_L",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Wednesday"
+      ],
+      "args": "-1 128 1 adam base fp16 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_base_benchmark_adam_fp16_seq512_sgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-base-uncased_L",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Wednesday"
+      ],
+      "args": "-1 512 1 adam base fp16 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_base_benchmark_adam_fp32_seq128_sgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-base-uncased_L",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "midnight",
+        "ort",
+        "bert_benchmark"
+      ],
+      "args": "-1 128 1 adam base fp32 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_base_benchmark_adam_fp32_seq512_sgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-base-uncased_L",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Monday"
+      ],
+      "args": "-1 512 1 adam base fp32 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_base_benchmark_adam_fp16_seq128_mgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-base-uncased_L",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Wednesday"
+      ],
+      "args": "-1 128 1 adam base fp16 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_base_benchmark_adam_fp16_seq512_mgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-base-uncased_L",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Wednesday"
+      ],
+      "args": "-1 512 1 adam base fp16 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_base_benchmark_adam_fp32_seq128_mgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-base-uncased_L",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "midnight",
+        "ort",
+        "bert_benchmark",
+        "mainline"
+      ],
+      "args": "-1 128 1 adam base fp32 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_base_benchmark_adam_fp32_seq512_mgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-base-uncased_L",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Monday"
+      ],
+      "args": "-1 512 1 adam base fp32 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_adam_fp32_seq512_sgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Monday"
+      ],
+      "args": "-1 512 400 adam large fp32 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_adam_fp32_seq128_sgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "midnight",
+        "ort",
+        "bert_benchmark",
+        "mainline"
+      ],
+      "args": "-1 128 400 adam large fp32 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_adam_fp16_seq128_sgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Wednesday"
+      ],
+      "args": "-1 128 400 adam large fp16 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_lamb_fp32_seq128_sgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Monday"
+      ],
+      "args": "-1 128 400 lamb large fp32 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_lamb_fp16_seq128_sgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Monday"
+      ],
+      "args": "-1 128 400 lamb large fp16 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_adam_fp16_seq512_sgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Wednesday"
+      ],
+      "args": "-1 512 400 adam large fp16 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_lamb_fp32_seq512_sgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Monday"
+      ],
+      "args": "-1 512 400 lamb large fp32 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_lamb_fp16_seq512_sgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Monday"
+      ],
+      "args": "-1 512 400 lamb large fp16 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_adam_fp32_seq512_mgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Monday"
+      ],
+      "args": "-1 512 400 adam large fp32 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_adam_fp32_seq128_mgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "midnight",
+        "ort",
+        "bert_benchmark",
+        "mainline"
+      ],
+      "args": "-1 128 400 adam large fp32 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_adam_fp16_seq128_mgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Wednesday"
+      ],
+      "args": "-1 128 400 adam large fp16 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_lamb_fp32_seq128_mgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Monday"
+      ],
+      "args": "-1 128 400 lamb large fp32 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_lamb_fp16_seq128_mgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Monday"
+      ],
+      "args": "-1 128 400 lamb large fp16 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_adam_fp16_seq512_mgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Wednesday"
+      ],
+      "args": "-1 512 400 adam large fp16 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_lamb_fp32_seq512_mgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Monday"
+      ],
+      "args": "-1 512 400 lamb large fp32 1 1 1024"
+    },
+    {
+      "name": "ort_nv_bert_benchmark_lamb_fp16_seq512_mgpu",
+      "url": "https://github.com/microsoft/huggingface-transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/ort_nv_bert",
+      "data": "ort_bert-large-uncased_L",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ort_nv_bert_benchmarks.csv",
+      "tags": [
+        "ort",
+        "bert_benchmark",
+        "Monday"
+      ],
+      "args": "-1 512 400 lamb large fp16 1 1 1024"
+    },
+    {
+      "name": "ort_huggingface_bert",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_bert/run.sh",
+      "data": "huggingface",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "fp16",
+      "tags": [
+        "ort",
+        "bert",
+        "Thursday",
+        "mainline"
+      ],
+      "args": "--ort --model-name=bert-large-uncased"
+    },
+    {
+      "name": "ort_huggingface_bert_fp32",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_bert/run.sh",
+      "data": "huggingface",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "bert",
+        "Thursday",
+        "mainline"
+      ],
+      "args": "--ort --precision=fp32 --model-name=bert-large-uncased"
+    },
+    {
+      "name": "ort_huggingface_bart",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_bart/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "bart",
+        "Friday"
+      ],
+      "args": "--ort "
+    },
+    {
+      "name": "ort_huggingface_distilbert-base",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_distilbert-base/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "distilbert",
+        "Saturday"
+      ],
+      "args": "--ort "
+    },
+    {
+      "name": "ort_huggingface_t5-large",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_t5-large/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "transformer",
+        "Sunday"
+      ],
+      "args": "--ort "
+    },
+    {
+      "name": "ort_huggingface_deberta-v2-xxlarge",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_deberta-v2-xxlarge/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "debertaxxl",
+        "Monday"
+      ],
+      "args": "--ort "
+    },
+    {
+      "name": "ort_huggingface_gpt2",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_gpt2/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "gpt2",
+        "Tuesday",
+        "mainline"
+      ],
+      "args": "--ort "
+    },
+    {
+      "name": "ort_huggingface_gpt2_fp32",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_gpt2/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "gpt2",
+        "Tuesday"
+      ],
+      "args": "--ort --precision=fp32 "
+    },
+    {
+      "name": "ort_huggingface_roberta-large",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_roberta-large/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "roberta",
+        "Wednesday",
+        "mainline"
+      ],
+      "args": "--ort "
+    },
+    {
+      "name": "ds3_pyt_huggingface_bloom",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bloom/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bloom",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path bigscience/bloom"
+    },
+    {
+      "name": "ds3_pyt_huggingface_bloom_560m",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bloom/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bloom",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path bigscience/bloom-560m"
+    },
+    {
+      "name": "ds3_pyt_huggingface_bloom_1b1",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bloom/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bloom",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path bigscience/bloom-1b1"
+    },
+    {
+      "name": "ds3_pyt_huggingface_bloom_1b7",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bloom/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bloom",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path bigscience/bloom-1b7"
+    },
+    {
+      "name": "ds3_pyt_huggingface_bloom_3b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bloom/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bloom",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path bigscience/bloom-3b"
+    },
+    {
+      "name": "ds3_pyt_huggingface_bloom_7b1",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bloom/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bloom",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path bigscience/bloom-7b1"
+    },
+    {
+      "name": "ds3_pyt_huggingface_bloom_train_560m",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bloom/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bloom",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path bigscience/bloom-560m"
+    },
+    {
+      "name": "ds3_pyt_huggingface_bloom_train_1b1",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bloom/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bloom",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path bigscience/bloom-1b1"
+    },
+    {
+      "name": "ds3_pyt_huggingface_bloom_train_1b7",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bloom/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bloom",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path bigscience/bloom-1b7"
+    },
+    {
+      "name": "ds3_pyt_huggingface_bloom_train_3b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bloom/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bloom",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path bigscience/bloom-3b"
+    },
+    {
+      "name": "ds3_pyt_huggingface_bloom_train_7b1",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bloom/train.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Adrian.Abeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bloom",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path bigscience/bloom-7b1"
+    },
+    {
+      "name": "ds0_pyt_huggingface_bert",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bert/run.sh",
+      "data": "huggingface",
+      "n_gpus": "-1",
+      "owner": "RamyaSai.Ramineni@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "bert",
+        "Thursday"
+      ],
+      "args": "--deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "ds0_pyt_huggingface_bart",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_bart/run.sh",
+      "n_gpus": "-1",
+      "owner": "RamyaSai.Ramineni@amd.com",
+      "training_precision": "",
+      "tags": [
+        "midnight",
+        "pyt",
+        "bart"
+      ],
+      "args": "--deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "ds0_pyt_huggingface_distilbert-base",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_distilbert-base/run.sh",
+      "n_gpus": "-1",
+      "owner": "RamyaSai.Ramineni@amd.com",
+      "training_precision": "",
+      "tags": [
+        "midnight",
+        "pyt",
+        "distilbert"
+      ],
+      "args": "--deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "ds0_pyt_huggingface_t5-large",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_t5-large/run.sh",
+      "n_gpus": "-1",
+      "owner": "RamyaSai.Ramineni@amd.com",
+      "training_precision": "",
+      "tags": [
+        "midnight",
+        "pyt",
+        "transformer"
+      ],
+      "args": "--deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "ds0_pyt_huggingface_deberta-v2-xxlarge",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_deberta-v2-xxlarge/run.sh",
+      "n_gpus": "-1",
+      "owner": "RamyaSai.Ramineni@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "debertaxxl",
+        "Friday"
+      ],
+      "args": "--deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "ds0_pyt_huggingface_gpt2",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_gpt2/run.sh",
+      "n_gpus": "-1",
+      "owner": "RamyaSai.Ramineni@amd.com",
+      "training_precision": "",
+      "tags": [
+        "midnight",
+        "pyt",
+        "gpt2"
+      ],
+      "args": "--deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "ds3_pyt_huggingface_opt_iml_max_30b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-iml-max-30b"
+    },
+    {
+      "name": "ds3_pyt_huggingface_opt_iml_30b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-iml-30b"
+    },
+    {
+      "name": "ds3_pyt_huggingface_opt_iml_max_1b3",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-iml-max-1.3b"
+    },
+    {
+      "name": "ds3_pyt_huggingface_opt_iml_1b3",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-iml-1.3b"
+    },
+    {
+      "name": "ds3_pyt_huggingface_opt_66b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-66b"
+    },
+    {
+      "name": "ds3_pyt_huggingface_opt_30b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-30b"
+    },
+    {
+      "name": "ds3_pyt_huggingface_opt_13b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-13b"
+    },
+    {
+      "name": "ds3_pyt_huggingface_opt_6b7",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-6.7b"
+    },
+    {
+      "name": "ds3_pyt_huggingface_opt_2b7",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-2.7b"
+    },
+    {
+      "name": "ds3_pyt_huggingface_opt_1b3",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-1.3b"
+    },
+    {
+      "name": "ds3_pyt_huggingface_opt_350m",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-350m"
+    },
+    {
+      "name": "ds3_pyt_huggingface_opt_125m",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_opt/run.sh",
+      "data": "huggingface",
+      "timeout": 21600,
+      "n_gpus": "-1",
+      "owner": "Prasanth.Nunna@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "opt",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path facebook/opt-125m"
+    },
+    {
+      "name": "ds0_pyt_huggingface_roberta-large",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_roberta-large/run.sh",
+      "n_gpus": "-1",
+      "owner": "RamyaSai.Ramineni@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "roberta",
+        "Saturday"
+      ],
+      "args": "--deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "ds0_ort_huggingface_bert",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_bert/run.sh",
+      "data": "huggingface",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "bert",
+        "Sunday"
+      ],
+      "args": "--ort --deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "ds0_ort_huggingface_bart",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_bart/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "bart",
+        "Monday"
+      ],
+      "args": "--ort --deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "ds0_ort_huggingface_distilbert-base",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_distilbert-base/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "distilbert",
+        "Tuesday"
+      ],
+      "args": "--ort --deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "ds0_ort_huggingface_t5-large",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_t5-large/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "transformer",
+        "Wednesday"
+      ],
+      "args": "--ort --deepspeed=ds_config_zero_2.json "
+    },
+    {
+      "name": "ds0_ort_huggingface_deberta-v2-xxlarge",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_deberta-v2-xxlarge/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "debertaxxl",
+        "Thursday"
+      ],
+      "args": "--ort --deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "ds0_ort_huggingface_gpt2",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_gpt2/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "gpt2",
+        "Friday"
+      ],
+      "args": "--ort --deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "ds0_ort_huggingface_roberta-large",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ort_huggingface",
+      "scripts": "scripts/huggingface_roberta-large/run.sh",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "tags": [
+        "ort",
+        "roberta",
+        "Saturday"
+      ],
+      "args": "--ort --deepspeed=ds_config_zero_0.json "
+    },
+    {
+      "name": "onnxrt_gpt_attention_benchmarks",
+      "url": "https://github.com/microsoft/onnxruntime",
+      "dockerfile": "docker/ort_accuracy",
+      "dockercontext": "scripts/onnxrt_gpt_attention_benchmarks",
+      "scripts": "scripts/onnxrt_gpt_attention_benchmarks",
+      "n_gpus": "1",
+      "owner": "joseph.groenenboom@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "Wednesday",
+        "ort_rocmep_acc"
+      ],
+      "args": "",
+      "multiple_results": "perf_rocmep_gpt_attention_benchmarks.csv"
+    },
+    {
+      "name": "onnxrt_layernorm_benchmarks",
+      "url": "https://github.com/microsoft/onnxruntime",
+      "dockerfile": "docker/ort_accuracy",
+      "dockercontext": "scripts/onnxrt_layernorm_benchmarks",
+      "scripts": "scripts/onnxrt_layernorm_benchmarks",
+      "n_gpus": "1",
+      "owner": "joseph.groenenboom@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "Wednesday",
+        "ort_rocmep_acc"
+      ],
+      "args": "",
+      "multiple_results": "perf_rocmep_layernorm_benchmarks.csv"
+    },
+    {
+      "name": "onnxrt_gelu_benchmarks",
+      "url": "https://github.com/microsoft/onnxruntime",
+      "dockerfile": "docker/ort_accuracy",
+      "dockercontext": "scripts/onnxrt_gelu_benchmarks",
+      "scripts": "scripts/onnxrt_gelu_benchmarks",
+      "n_gpus": "1",
+      "owner": "joseph.groenenboom@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "Wednesday",
+        "ort_rocmep_acc"
+      ],
+      "args": "",
+      "multiple_results": "perf_rocmep_gelu_benchmarks.csv"
+    },
+    {
+      "name": "onnxrt_conv_to_onnx_benchmarks",
+      "url": "https://github.com/microsoft/onnxruntime",
+      "dockerfile": "docker/ort_accuracy",
+      "dockercontext": "scripts/onnxrt_conv_to_onnx_benchmarks",
+      "scripts": "scripts/onnxrt_conv_to_onnx_benchmarks",
+      "n_gpus": "1",
+      "owner": "joseph.groenenboom@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "Wednesday",
+        "ort_rocmep_acc"
+      ],
+      "args": "",
+      "multiple_results": "perf_rocmep_convert_to_onnx_benchmarks.csv"
+    },
+    {
+      "name": "onnxrt_bert_distilled_benchmarks",
+      "url": "https://github.com/microsoft/onnxruntime",
+      "dockerfile": "docker/ort_accuracy",
+      "dockercontext": "scripts/onnxrt_bert_distilled_benchmarks",
+      "scripts": "scripts/onnxrt_bert_distilled_benchmarks",
+      "n_gpus": "1",
+      "owner": "joseph.groenenboom@amd.com",
+      "training_precision": "",
+      "tags": [
+        "Inference",
+        "Wednesday",
+        "ort_rocmep_acc"
+      ],
+      "args": "",
+      "multiple_results": "perf_rocmep_bert_distilled_benchmarks.csv"
+    },
+    {
+      "name": "pyt_superbench_e2e_cnn_bz16",
+      "url": "https://github.com/microsoft/superbenchmark",
+      "dockerfile": "docker/pyt_superbench_vision",
+      "scripts": "scripts/pyt_superbench_cnn",
+      "n_gpus": "-1",
+      "owner": "sheida.amirnavaei@amd.com",
+      "training_precision": "fp16 fp32",
+      "args": "e2e_cnn.yaml e2e_cnn_performance.csv 16 mnasnet0_5 mnasnet0_75 mnasnet1_0 mnasnet1_3 resnet18 resnet34 resnet50 resnet101 resnet152 resnext50_32x4d resnext101_32x8d wide_resnet50_2 wide_resnet101_2  densenet121 densenet161 densenet169 densenet201 vgg11 vgg13 vgg16 vgg19 vgg11_bn vgg13_bn vgg16_bn vgg19_bn mobilenet_v2 shufflenet_v2_x0_5 shufflenet_v2_x1_0 shufflenet_v2_x1_5 shufflenet_v2_x2_0 squeezenet1_0 squeezenet1_1",
+      "timeout": 28800,
+      "tags": [
+        "pyt",
+        "fp16",
+        "fp32",
+        "superbench",
+        "Sunday",
+        "exec_dashboard"
+      ],
+      "multiple_results": "e2e_cnn_performance.csv"
+    },
+    {
+      "name": "pyt_superbench_e2e_cnn_bz32",
+      "url": "https://github.com/microsoft/superbenchmark",
+      "dockerfile": "docker/pyt_superbench_vision",
+      "scripts": "scripts/pyt_superbench_cnn",
+      "n_gpus": "-1",
+      "owner": "sheida.amirnavaei@amd.com",
+      "training_precision": "fp16 fp32",
+      "args": "e2e_cnn.yaml e2e_cnn_performance.csv 32 mnasnet0_5 mnasnet0_75 mnasnet1_0 mnasnet1_3 resnet18 resnet34 resnet50 resnet101 resnet152 resnext50_32x4d resnext101_32x8d wide_resnet50_2 wide_resnet101_2  densenet121 densenet161 densenet169 densenet201 vgg11 vgg13 vgg16 vgg19 vgg11_bn vgg13_bn vgg16_bn vgg19_bn mobilenet_v2 shufflenet_v2_x0_5 shufflenet_v2_x1_0 shufflenet_v2_x1_5 shufflenet_v2_x2_0 squeezenet1_0 squeezenet1_1",
+      "timeout": 28800,
+      "tags": [
+        "pyt",
+        "fp16",
+        "fp32",
+        "superbench",
+        "Sunday",
+        "exec_dashboard"
+      ],
+      "multiple_results": "e2e_cnn_performance.csv"
+    },
+    {
+      "name": "pyt_superbench_e2e_cnn_bz64",
+      "url": "https://github.com/microsoft/superbenchmark",
+      "dockerfile": "docker/pyt_superbench_vision",
+      "scripts": "scripts/pyt_superbench_cnn",
+      "n_gpus": "-1",
+      "owner": "sheida.amirnavaei@amd.com",
+      "training_precision": "fp16 fp32",
+      "args": "e2e_cnn.yaml e2e_cnn_performance.csv 64 mnasnet0_5 mnasnet0_75 mnasnet1_0 mnasnet1_3 resnet18 resnet34 resnet50 resnet101 resnet152 resnext50_32x4d resnext101_32x8d wide_resnet50_2 wide_resnet101_2  densenet121 densenet161 densenet169 densenet201 vgg11 vgg13 vgg16 vgg19 vgg11_bn vgg13_bn vgg16_bn vgg19_bn mobilenet_v2 shufflenet_v2_x0_5 shufflenet_v2_x1_0 shufflenet_v2_x1_5 shufflenet_v2_x2_0 squeezenet1_0 squeezenet1_1",
+      "timeout": 28800,
+      "tags": [
+        "pyt",
+        "fp16",
+        "fp32",
+        "superbench",
+        "Sunday",
+        "exec_dashboard"
+      ],
+      "multiple_results": "e2e_cnn_performance.csv"
+    },
+    {
+      "name": "pyt_superbench_cnn_atoa_small",
+      "url": "https://github.com/microsoft/superbenchmark",
+      "dockerfile": "docker/pyt_superbench_vision",
+      "scripts": "scripts/pyt_superbench_cnn",
+      "n_gpus": "-1",
+      "owner": "joseph.groenenboom@amd.com",
+      "training_precision": "fp16 fp32",
+      "args": "atoa_small_hayabusa.yaml atoa_small_hayabusa_performance.csv gpt2-small gpt2-large bert-base bert-large lstm resnet50 resnet101 resnet152 densenet169 densenet201 vgg11 vgg13 vgg16 vgg19",
+      "timeout": 28800,
+      "tags": [
+        "pyt",
+        "fp16",
+        "fp32",
+        "superbench",
+        "Sunday"
+      ],
+      "multiple_results": "atoa_small_hayabusa_performance.csv"
+    },
+    {
+      "name": "pyt_superbench_cnn_atoa_medium",
+      "url": "https://github.com/microsoft/superbenchmark",
+      "dockerfile": "docker/pyt_superbench_vision",
+      "scripts": "scripts/pyt_superbench_cnn",
+      "n_gpus": "-1",
+      "owner": "joseph.groenenboom@amd.com",
+      "training_precision": "fp16 fp32",
+      "args": "atoa_medium_hayabusa.yaml atoa_medium_hayabusa_performance.csv gpt2-small gpt2-large bert-base bert-large lstm resnet50 resnet101 resnet152 densenet169 densenet201 vgg11 vgg13 vgg16 vgg19",
+      "timeout": 28800,
+      "tags": [
+        "pyt",
+        "fp16",
+        "fp32",
+        "Monday",
+        "superbench",
+        "mainline"
+      ],
+      "multiple_results": "atoa_medium_hayabusa_performance.csv"
+    },
+    {
+      "name": "pyt_superbench_cnn_atoa_legacy",
+      "url": "https://github.com/microsoft/superbenchmark",
+      "dockerfile": "docker/pyt_superbench_vision",
+      "scripts": "scripts/pyt_superbench_cnn",
+      "n_gpus": "-1",
+      "owner": "joseph.groenenboom@amd.com",
+      "training_precision": "fp16 fp32",
+      "args": "atoa_legacy_hayabusa.yaml atoa_legacy_hayabusa_performance.csv gpt2-small gpt2-large bert-base bert-large lstm resnet50 resnet101 resnet152 densenet169 densenet201 vgg11 vgg13 vgg16 vgg19",
+      "timeout": 28800,
+      "tags": [
+        "pyt",
+        "fp16",
+        "fp32",
+        "superbench",
+        "Tuesday"
+      ],
+      "multiple_results": "atoa_legacy_hayabusa_performance.csv"
+    },
+    {
+      "name": "pyt_superbench_cnn_peak",
+      "url": "https://github.com/microsoft/superbenchmark",
+      "dockerfile": "docker/pyt_superbench_vision",
+      "scripts": "scripts/pyt_superbench_cnn",
+      "n_gpus": "-1",
+      "owner": "joseph.groenenboom@amd.com",
+      "training_precision": "fp16 fp32",
+      "args": "peak_hayabusa.yaml peak_hayabusa_performance.csv gpt2-large:float bert-base:float bert-large:float lstm:float resnet50:float resnet101:float resnet152:float densenet169:float densenet201:float vgg11:float vgg13:float vgg16:float vgg19:float gpt2-large:half bert-base:half bert-large:half lstm:half resnet50:half resnet101:half resnet152:half densenet169:half densenet201:half vgg11:half vgg13:half vgg16:half vgg19:half",
+      "timeout": 28800,
+      "tags": [
+        "pyt",
+        "fp16",
+        "fp32",
+        "superbench",
+        "mainline",
+        "exec_dashboard"
+      ],
+      "multiple_results": "peak_hayabusa_performance.csv"
+    },
+    {
+      "name": "pyt_superbench_msft_2024_peak",
+      "url": "https://github.com/microsoft/superbenchmark",
+      "dockerfile": "docker/pyt_superbench_vision",
+      "scripts": "scripts/pyt_superbench_cnn",
+      "n_gpus": "-1",
+      "owner": "sheida.amirnavaei@amd.com",
+      "training_precision": "fp16 fp32",
+      "args": "pyt_superbench_msft_2024_peak.yaml pyt_superbench_msft_2024_peak_performance.csv model-benchmarks:gpt model-benchmarks:bert model-benchmarks:densenet model-benchmarks:resnet model-benchmarks:vgg model-benchmarks:lstm",
+      "timeout": 28800,
+      "tags": [
+        "pyt",
+        "superbench",
+        "exec_dashboard"
+      ],
+      "multiple_results": "pyt_superbench_msft_2024_peak_performance.csv"
+    },
+    {
+      "name": "tf2_mlperf_resnet50v1.5_fp16_nchw",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/tf2_mlperf_resnet50v1.5",
+      "scripts": "scripts/tf2_mlperf_resnet50v1.5",
+      "n_gpus": "1",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "fp16",
+      "tags": [
+        "midnight",
+        "tf2",
+        "fp16",
+        "resnet50"
+      ],
+      "args": "fp16 NCHW"
+    },
+    {
+      "name": "tf2_mlperf_resnet50v1.5_fp16_nhwc",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/tf2_mlperf_resnet50v1.5",
+      "scripts": "scripts/tf2_mlperf_resnet50v1.5",
+      "n_gpus": "1",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "fp16",
+      "tags": [
+        "midnight",
+        "tf2",
+        "fp16",
+        "resnet50"
+      ],
+      "args": "fp16 NHWC"
+    },
+    {
+      "name": "tf2_mlperf_resnet50v1.5_fp32_nchw",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/tf2_mlperf_resnet50v1.5",
+      "scripts": "scripts/tf2_mlperf_resnet50v1.5",
+      "n_gpus": "1",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "midnight",
+        "tf2",
+        "fp32",
+        "resnet50"
+      ],
+      "args": "fp32 NCHW"
+    },
+    {
+      "name": "tf2_mlperf_resnet50v1.5_fp32_nhwc",
+      "url": "https://github.com/ROCmSoftwarePlatform/MLPerf-mGPU",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/tf2_mlperf_resnet50v1.5",
+      "scripts": "scripts/tf2_mlperf_resnet50v1.5",
+      "n_gpus": "1",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "midnight",
+        "tf2",
+        "fp32",
+        "resnet50"
+      ],
+      "args": "fp32 NHWC"
+    },
+    {
+      "name": "pyt_detectron2_retinanet_singlegpu",
+      "url": "https://github.com/facebookresearch/detectron2",
+      "dockerfile": "docker/pyt_detectron2",
+      "scripts": "scripts/pyt_detectron2_retinanet",
+      "data": "coco2017",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "pyt",
+        "fp32",
+        "detectron2",
+        "Thursday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_detectron2_retinanet_singlenode",
+      "url": "https://github.com/facebookresearch/detectron2",
+      "dockerfile": "docker/pyt_detectron2",
+      "scripts": "scripts/pyt_detectron2_retinanet",
+      "data": "coco2017",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "pyt",
+        "fp32",
+        "detectron2",
+        "Thursday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_detectron2_maskcnn_singlegpu",
+      "url": "https://github.com/facebookresearch/detectron2",
+      "dockerfile": "docker/pyt_detectron2",
+      "scripts": "scripts/pyt_detectron2_maskcnn",
+      "data": "coco2017",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "pyt",
+        "fp32",
+        "detectron2",
+        "Friday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_detectron2_maskcnn_singlenode",
+      "url": "https://github.com/facebookresearch/detectron2",
+      "dockerfile": "docker/pyt_detectron2",
+      "scripts": "scripts/pyt_detectron2_maskcnn",
+      "data": "coco2017",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "pyt",
+        "fp32",
+        "detectron2",
+        "Friday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_lstm_singlegpu",
+      "url": "https://github.com/ROCmSoftwarePlatform/frameworks-internal",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_lstm",
+      "scripts": "scripts/pyt_lstm",
+      "n_gpus": "1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "pyt",
+        "fp32",
+        "lstm",
+        "Saturday"
+      ],
+      "args": "",
+      "multiple_results": "perf_lstm.csv"
+    },
+    {
+      "name": "pyt_lstm_singlenode",
+      "url": "https://github.com/ROCmSoftwarePlatform/frameworks-internal",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_lstm",
+      "scripts": "scripts/pyt_lstm",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "fp32",
+      "tags": [
+        "pyt",
+        "fp32",
+        "lstm",
+        "Saturday"
+      ],
+      "args": "",
+      "multiple_results": "perf_lstm.csv"
+    },
+    {
+      "name": "kernel_asserts",
+      "url": "https://github.com/ROCmSoftwarePlatform/microbenchmarks",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt",
+      "scripts": "scripts/kernel_asserts",
+      "n_gpus": "1",
+      "owner": "hubertlu@amd.com",
+      "training_precision": "",
+      "tags": [
+        "microbenchmarks",
+        "pyt",
+        "Sunday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_fbgemm_embedding_bag_swiping_train",
+      "url": "https://github.com/facebookresearch/param",
+      "dockerfile": "docker/pyt_fbgemm",
+      "scripts": "scripts/pyt_fbgemm_embedding_bag_swiping/train.sh",
+      "n_gpus": "1",
+      "owner": "wei.han3@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt_fbgemm_embedding_bag",
+        "pyt_fbgemm",
+        "pyt",
+        "Wednesday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_fbgemm_embedding_bag_swiping_train.csv"
+    },
+    {
+      "name": "pyt_fbgemm_embedding_bag_swiping_inference",
+      "url": "https://github.com/facebookresearch/param",
+      "dockerfile": "docker/pyt_fbgemm",
+      "scripts": "scripts/pyt_fbgemm_embedding_bag_swiping/inference.sh",
+      "n_gpus": "1",
+      "owner": "wei.han3@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt_fbgemm_embedding_bag",
+        "pyt_fbgemm",
+        "pyt",
+        "Thursday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_fbgemm_embedding_bag_swiping_inference.csv"
+    },
+    {
+      "name": "pyt_rnnt_train",
+      "url": "https://github.com/facebookresearch/FAMBench",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_rnnt",
+      "scripts": "scripts/pyt_rnnt/run.sh",
+      "n_gpus": "1",
+      "owner": "Juan.Villamizar@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "rnnt",
+        "fambench",
+        "Thursday",
+        "exec_dashboard"
+      ],
+      "args": "Train"
+    },
+    {
+      "name": "pyt_micro_bm",
+      "url": "https://github.com/ROCmSoftwarePlatform/pytorch-micro-benchmarking",
+      "dockerfile": "docker/pyt_micro_bm",
+      "scripts": "scripts/pyt_micro_bm/run.sh",
+      "n_gpus": "-1",
+      "owner": "pruthvi.madugundu@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "pytorch_micro_benchmarks",
+        "resnet50",
+        "Tuesday",
+        "Friday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_micro_bm.csv"
+    },
+    {
+      "name": "pyt_micro_bm_ddp",
+      "url": "https://github.com/ROCmSoftwarePlatform/pytorch-micro-benchmarking",
+      "dockerfile": "docker/pyt_micro_bm_ddp",
+      "scripts": "scripts/pyt_micro_bm_ddp/run.sh",
+      "n_gpus": "-1",
+      "owner": "pruthvi.madugundu@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "pytorch_micro_benchmarks",
+        "resnet50",
+        "Tuesday",
+        "Friday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_micro_bm_ddp.csv"
+    },
+    {
+      "name": "pyt_ait_resnet50",
+      "url": "https://github.com/ROCmSoftwarePlatform/AITemplate",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_ait",
+      "scripts": "scripts/pyt_ait_resnet50/run.sh",
+      "n_gpus": "1",
+      "owner": "Bhavya.Medishetty@amd.com",
+      "training_precision": "",
+      "timeout": 21600,
+      "tags": [
+        "pyt",
+        "ait",
+        "Thursday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_ait_resnet50.csv"
+    },
+    {
+      "name": "pyt_ait_bert",
+      "url": "https://github.com/ROCmSoftwarePlatform/AITemplate",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_ait",
+      "scripts": "scripts/pyt_ait_bert/run.sh",
+      "n_gpus": "1",
+      "owner": "Bhavya.Medishetty@amd.com",
+      "training_precision": "",
+      "timeout": 21600,
+      "tags": [
+        "pyt",
+        "ait",
+        "Thursday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_ait_bert.csv"
+    },
+    {
+      "name": "pyt_ait_stable_diffusion",
+      "url": "https://github.com/ROCmSoftwarePlatform/AITemplate",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_ait",
+      "scripts": "scripts/pyt_ait_stable_diffusion/run.sh",
+      "n_gpus": "1",
+      "owner": "Bhavya.Medishetty@amd.com",
+      "training_precision": "",
+      "timeout": 21600,
+      "tags": [
+        "pyt",
+        "ait",
+        "Thursday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_ait_stable_diffusion.csv"
+    },
+    {
+      "name": "pyt_operator_benchmark",
+      "url": "https://github.com/pytorch/pytorch",
+      "dockerfile": "docker/pyt_operator_benchmark",
+      "scripts": "scripts/pyt_operator_benchmark/run.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "timeout": 14400,
+      "training_precision": "",
+      "tags": [
+        "pyt_op",
+        "operator_benchmark",
+        "Friday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_operator_benchmark.csv"
+    },
+    {
+      "name": "pyt_codex_topk_pytorch",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_topk_pytorch.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 7200,
+      "tags": [
+        "pyt",
+        "codex",
+        "gpt4",
+        "codex_pytorch",
+        "codex_topk_pytorch",
+        "Saturday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_codex_topk_pytorch.csv"
+    },
+    {
+      "name": "pyt_codex_softmax_pytorch",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_softmax_pytorch.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 7200,
+      "tags": [
+        "pyt",
+        "codex",
+        "gpt4",
+        "codex_pytorch",
+        "codex_softmax_pytorch",
+        "Saturday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_codex_softmax_pytorch.csv"
+    },
+    {
+      "name": "pyt_codex_layernorm_pytorch",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_layernorm_pytorch.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 7200,
+      "tags": [
+        "pyt",
+        "codex",
+        "gpt4",
+        "codex_pytorch",
+        "codex_layernorm_pytorch",
+        "Saturday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_codex_layernorm_pytorch.csv"
+    },
+    {
+      "name": "pyt_codex_gemm_hipblaslt",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_hipblaslt.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 7200,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_gemm",
+        "codex_gemm_hipblaslt",
+        "Saturday"
+      ],
+      "args": "run_gemm",
+      "multiple_results": "results_pyt_codex_gemm_hipblaslt.csv"
+    },
+    {
+      "name": "pyt_codex_group_gemm_hipblaslt",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_hipblaslt.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 7200,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_group_gemm",
+        "codex_group_gemm_hipblaslt",
+        "Saturday"
+      ],
+      "args": "run_group_gemm",
+      "multiple_results": "results_pyt_codex_group_gemm_hipblaslt.csv"
+    },
+    {
+      "name": "pyt_codex_double_gemm_hipblaslt",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_hipblaslt.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 7200,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_double_gemm",
+        "codex_double_gemm_hipblaslt",
+        "Saturday"
+      ],
+      "args": "run_double_gemm",
+      "multiple_results": "results_pyt_codex_double_gemm_hipblaslt.csv"
+    },
+    {
+      "name": "pyt_codex_double_group_gemm_hipblaslt",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_hipblaslt.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 7200,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_double_group_gemm",
+        "codex_double_group_gemm_hipblaslt",
+        "Saturday"
+      ],
+      "args": "run_double_group_gemm",
+      "multiple_results": "results_pyt_codex_double_group_gemm_hipblaslt.csv"
+    },
+    {
+      "name": "pyt_gpt4_gemm_hipblaslt",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_gpt4/run_hipblaslt.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 10000,
+      "tags": [
+        "pyt",
+        "gpt4",
+        "gpt4_gemm",
+        "gpt4_gemm_hipblaslt",
+        "Saturday"
+      ],
+      "args": "run_gemm",
+      "multiple_results": "results_pyt_gpt4_gemm_hipblaslt.csv"
+    },
+    {
+      "name": "pyt_gpt4_group_gemm_hipblaslt",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_gpt4/run_hipblaslt.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 21600,
+      "tags": [
+        "pyt",
+        "gpt4",
+        "gpt4_group_gemm",
+        "gpt4_group_gemm_hipblaslt",
+        "Saturday"
+      ],
+      "args": "run_group_gemm",
+      "multiple_results": "results_pyt_gpt4_group_gemm_hipblaslt.csv"
+    },
+    {
+      "name": "pyt_ait_vit",
+      "url": "https://github.com/ROCmSoftwarePlatform/AITemplate",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_ait",
+      "scripts": "scripts/pyt_ait_vit/run.sh",
+      "n_gpus": "1",
+      "owner": "Bhavya.Medishetty@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "ait",
+        "Thursday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_ait_vit.csv"
+    },
+    {
+      "name": "pytorch_upstream_model_benchmarks",
+      "url": "https://github.com/pytorch/benchmark",
+      "dockerfile": "docker/pytorch_upstream_model_benchmarks",
+      "scripts": "scripts/pytorch_upstream_model_benchmarks/run.sh",
+      "n_gpus": "-1",
+      "owner": "Cem.Bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 36000,
+      "tags": [
+        "model_benchmarks",
+        "pyt",
+        "benchmark",
+        "Wednesday"
+      ],
+      "args": "",
+      "multiple_results": "results_pytorch_upstream_model_benchmarks.csv"
+    },
+    {
+      "name": "pyt_codex_layernorm_apex",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_layernorm_apex.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 7200,
+      "tags": [
+        "pyt",
+        "codex",
+        "gpt4",
+        "codex_apex",
+        "codex_layernorm_apex",
+        "Saturday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_codex_layernorm_apex.csv"
+    },
+    {
+      "name": "pyt_codex_gemm_ck",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_ck.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 5400,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_ck",
+        "codex_gemm_ck",
+        "Saturday"
+      ],
+      "args": "run_gemm",
+      "multiple_results": "results_pyt_codex_gemm_ck.csv"
+    },
+    {
+      "name": "pyt_codex_group_gemm_ck",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_ck.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 5400,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_ck",
+        "codex_group_gemm",
+        "codex_group_gemm_ck",
+        "Saturday"
+      ],
+      "args": "run_group_gemm",
+      "multiple_results": "results_pyt_codex_group_gemm_ck.csv"
+    },
+    {
+      "name": "pyt_codex_double_gemm_ck",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_ck.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 5400,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_ck",
+        "codex_double_gemm_ck"
+      ],
+      "args": "run_double_gemm",
+      "multiple_results": "results_pyt_codex_double_gemm_ck.csv"
+    },
+    {
+      "name": "pyt_codex_double_group_gemm_ck",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_ck.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 5400,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_ck",
+        "codex_double_group_gemm",
+        "codex_double_group_gemm_ck"
+      ],
+      "args": "run_double_group_gemm",
+      "multiple_results": "results_pyt_codex_double_group_gemm_ck.csv"
+    },
+    {
+      "name": "pyt_gpt4_gemm_ck",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_gpt4/run_ck.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 5400,
+      "tags": [
+        "pyt",
+        "gpt4",
+        "gpt4_ck",
+        "gpt4_gemm_ck",
+        "Saturday"
+      ],
+      "args": "run_gemm",
+      "multiple_results": "results_pyt_gpt4_gemm_ck.csv"
+    },
+    {
+      "name": "pyt_gpt4_group_gemm_ck",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_gpt4/run_ck.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 5400,
+      "tags": [
+        "pyt",
+        "gpt4",
+        "gpt4_ck",
+        "gpt4_group_gemm",
+        "gpt4_group_gemm_ck",
+        "Saturday"
+      ],
+      "args": "run_group_gemm",
+      "multiple_results": "results_pyt_gpt4_group_gemm_ck.csv"
+    },
+    {
+      "name": "pyt_codex_layernorm_ck",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_ck.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 5400,
+      "tags": [
+        "pyt",
+        "codex",
+        "gpt4",
+        "codex_ck",
+        "codex_layernorm_ck",
+        "Saturday"
+      ],
+      "args": "run_layernorm",
+      "multiple_results": "results_pyt_codex_layernorm_ck.csv"
+    },
+    {
+      "name": "pyt_codex_layernorm_onnx",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_onnx.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 3600,
+      "tags": [
+        "pyt",
+        "codex",
+        "gpt4",
+        "codex_onnx",
+        "codex_layernorm_onnx",
+        "Saturday"
+      ],
+      "args": "run_layernorm",
+      "multiple_results": "results_pyt_codex_layernorm_onnx.csv"
+    },
+    {
+      "name": "pyt_codex_softmax_onnx",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_onnx.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 3600,
+      "tags": [
+        "pyt",
+        "codex",
+        "gpt4",
+        "codex_onnx",
+        "codex_softmax_onnx",
+        "Saturday"
+      ],
+      "args": "run_softmax",
+      "multiple_results": "results_pyt_codex_softmax_onnx.csv"
+    },
+    {
+      "name": "pyt_codex_topk_onnx",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_onnx.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 3600,
+      "tags": [
+        "pyt",
+        "codex",
+        "gpt4",
+        "codex_onnx",
+        "codex_topk_onnx",
+        "Saturday"
+      ],
+      "args": "run_topk",
+      "multiple_results": "results_pyt_codex_topk_onnx.csv"
+    },
+    {
+      "name": "pyt_codex_softmax_ck",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_ck.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 5400,
+      "tags": [
+        "pyt",
+        "codex",
+        "gpt4",
+        "codex_ck",
+        "codex_softmax_ck",
+        "Saturday"
+      ],
+      "args": "run_softmax",
+      "multiple_results": "results_pyt_codex_softmax_ck.csv"
+    },
+    {
+      "name": "pyt_codex_gemm_rocblas",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_rocBLAS.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 1800,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_rocblas",
+        "codex_gemm_rocblas",
+        "Saturday"
+      ],
+      "args": "run_gemm",
+      "multiple_results": "results_pyt_codex_rocBLAS.csv"
+    },
+    {
+      "name": "pyt_codex_double_gemm_rocblas",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_rocBLAS.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 1800,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_rocblas",
+        "codex_double_gemm_rocblas"
+      ],
+      "args": "run_double_gemm",
+      "multiple_results": "results_pyt_codex_double_rocBLAS.csv"
+    },
+    {
+      "name": "pyt_gpt4_gemm_rocblas",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_gpt4/run_rocBLAS.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 1800,
+      "tags": [
+        "pyt",
+        "gpt4",
+        "gpt4_rocblas",
+        "gpt4_gemm_rocblas",
+        "Saturday"
+      ],
+      "args": "run_gemm",
+      "multiple_results": "results_pyt_gpt4_rocBLAS.csv"
+    },
+    {
+      "name": "pyt_codex_layernorm_triton",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_triton.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 1800,
+      "tags": [
+        "pyt",
+        "codex",
+        "gpt4",
+        "codex_triton",
+        "codex_layernorm_triton",
+        "Saturday"
+      ],
+      "args": "run_layernorm",
+      "multiple_results": "results_pyt_codex_layernorm_triton.csv"
+    },
+    {
+      "name": "pyt_codex_gemm_triton",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_triton.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 2800,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_triton",
+        "codex_gemm_triton",
+        "Saturday"
+      ],
+      "args": "run_gemm",
+      "multiple_results": "results_pyt_codex_gemm_triton.csv"
+    },
+    {
+      "name": "pyt_codex_double_gemm_triton",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_triton.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 3800,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_triton",
+        "codex_double_gemm_triton",
+        "Saturday"
+      ],
+      "args": "run_double_gemm",
+      "multiple_results": "results_pyt_codex_double_gemm_triton.csv"
+    },
+    {
+      "name": "pyt_gpt4_gemm_triton",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_gpt4/run_triton.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 3800,
+      "tags": [
+        "pyt",
+        "gpt4",
+        "gpt4_triton",
+        "gpt4_gemm_triton",
+        "Saturday"
+      ],
+      "args": "run_gemm",
+      "multiple_results": "results_pyt_gpt4_gemm_triton.csv"
+    },
+    {
+      "name": "pyt_codex_softmax_triton",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_triton.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 1800,
+      "tags": [
+        "pyt",
+        "codex",
+        "gpt4",
+        "codex_triton",
+        "codex_softmax_triton",
+        "Saturday"
+      ],
+      "args": "run_softmax",
+      "multiple_results": "results_pyt_codex_softmax_triton.csv"
+    },
+    {
+      "name": "pyt_codex_allreduce_rccl",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_rccl.sh",
+      "n_gpus": "-1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 1800,
+      "tags": [
+        "pyt",
+        "codex",
+        "gpt4",
+        "codex_rccl",
+        "codex_allreduce_rccl",
+        "Saturday"
+      ],
+      "args": "",
+      "multiple_results": "results_pyt_codex_rccl.csv"
+    },
+    {
+      "name": "pyt_codex_conv_miopen",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_conv.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 1800,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_conv",
+        "codex_conv_miopen",
+        "Saturday"
+      ],
+      "args": "run_miopen",
+      "multiple_results": "results_pyt_codex_conv_miopen.csv"
+    },
+    {
+      "name": "pyt_codex_conv_onnxrt",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_full",
+      "scripts": "scripts/pyt_codex/run_conv.sh",
+      "n_gpus": "1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 2200,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_conv",
+        "codex_onnx",
+        "codex_conv_onnxrt",
+        "Saturday"
+      ],
+      "args": "run_onnxrt",
+      "multiple_results": "results_pyt_codex_conv_onnxrt.csv"
+    },
+    {
+      "name": "pyt_codex_gemm_cutlass",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_cutlass",
+      "scripts": "scripts/pyt_codex/run_cutlass.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 2200,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_gemm",
+        "codex_cutlass",
+        "codex_gemm_cutlass",
+        "H100"
+      ],
+      "args": "run_gemm",
+      "multiple_results": "results_pyt_codex_gemm_cutlass.csv"
+    },
+    {
+      "name": "pyt_codex_group_gemm_cutlass",
+      "url": "https://github.com/ROCmSoftwarePlatform/msft_amd_ai_operators",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_codex_cutlass",
+      "scripts": "scripts/pyt_codex/run_cutlass.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "timeout": 2200,
+      "tags": [
+        "pyt",
+        "codex",
+        "codex_group_gemm",
+        "codex_cutlass",
+        "codex_group_gemm_cutlass",
+        "H100"
+      ],
+      "args": "run_group_gemm",
+      "multiple_results": "results_pyt_codex_group_gemm_cutlass.csv"
+    },
+    {
+      "name": "pyt_copilot_computational_skew",
+      "url": "https://github.com/ROCmSoftwarePlatform/Megatron",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_copilot_computational_skew",
+      "scripts": "scripts/pyt_copilot_computational_skew",
+      "n_gpus": "-1",
+      "owner": "aswin.mathews@amd.com",
+      "training_precision": "",
+      "multiple_results": "results_copilot_skew.csv",
+      "tags": [
+        "pyt",
+        "copilot",
+        "microsoft"
+      ],
+      "args": ""
+    },
+    {
+      "name": "huggingface_gpt_neox",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_gpt_neox/run.sh",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 8800,
+      "tags": [
+        "pyt",
+        "gpt_neox",
+        "Sunday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path EleutherAI/gpt-neox-20b"
+    },
+    {
+      "name": "huggingface_gpt_neox_train",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/ds0_pyt_huggingface",
+      "scripts": "scripts/huggingface_gpt_neox/train.sh",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 14400,
+      "tags": [
+        "pyt",
+        "gpt_neox",
+        "Sunday"
+      ],
+      "args": "--deepspeed=ds_config_zero_3.json --model_name_or_path EleutherAI/gpt-neox-20b"
+    },
+    {
+      "name": "mosaic_llm",
+      "url": "https://github.com/mosaicml/examples",
+      "dockerfile": "docker/mosaic_llm",
+      "scripts": "scripts/mosaic_llm/run.sh",
+      "n_gpus": "-1",
+      "owner": "Juan.Villamizar@amd.com",
+      "training_precision": "fp16",
+      "multiple_results": "mosaic_llm.csv",
+      "tags": [
+        "pyt",
+        "mosaic",
+        "Friday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "flash_attention",
+      "url": "https://github.com/ROCmSoftwarePlatform/flash-attention",
+      "dockerfile": "docker/flash_attention",
+      "scripts": "scripts/flash_attention/run.sh",
+      "n_gpus": "-1",
+      "owner": "sixifang@amd.com",
+      "training_precision": "",
+      "multiple_results": "flash_attention.csv",
+      "tags": [
+        "Monday",
+        "pyt",
+        "fa"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_nano_gpt",
+      "url": "https://github.com/karpathy/nanoGPT",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pt_nano_gpt",
+      "scripts": "scripts/pt2_nano_gpt/run.sh",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 144000,
+      "tags": [
+        "pyt",
+        "nano_gpt",
+        "Saturday"
+      ],
+      "args": "run_train"
+    },
+    {
+      "name": "pyt_nano_gpt_compile",
+      "url": "https://github.com/karpathy/nanoGPT",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pt2_nano_gpt",
+      "scripts": "scripts/pt2_nano_gpt/run.sh",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "timeout": 144000,
+      "tags": [
+        "pyt",
+        "nano_gpt",
+        "Saturday"
+      ],
+      "args": "run_train_compile"
+    },
+    {
+      "name": "pyt_triton_unit_tests",
+      "url": "https://github.com/ROCmSoftwarePlatform/triton",
+      "dockerfile": "docker/pyt_triton",
+      "dockercontext": "scripts/pyt_triton_unit_tests",
+      "scripts": "scripts/pyt_triton_unit_tests/",
+      "n_gpus": "1",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "",
+      "multiple_results": "triton_unit_tests.csv",
+      "tags": [
+        "QA-triton",
+        "Friday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_triton_tutorials_performance",
+      "url": "https://github.com/ROCmSoftwarePlatform/triton",
+      "dockerfile": "docker/pyt_triton_tutorials_performance",
+      "dockercontext": "scripts/pyt_triton_tutorials_performance",
+      "scripts": "scripts/pyt_triton_tutorials_performance/",
+      "n_gpus": "1",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "",
+      "multiple_results": "triton_tutorials_performance.csv",
+      "tags": [
+        "QA-triton",
+        "Friday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_triton_rocmlir_mfma_dot_config_performance",
+      "url": "https://github.com/ROCmSoftwarePlatform/triton",
+      "dockerfile": "docker/pyt_triton_rocmlir_mfma_dot",
+      "dockercontext": "scripts/pyt_triton_rocmlir_mfma_config_performance",
+      "scripts": "scripts/pyt_triton_rocmlir_mfma_config_performance",
+      "n_gpus": "1",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "",
+      "multiple_results": "triton_rocmlir_mfma_dot_config_performance.csv",
+      "tags": [
+        "triton-rocmlir-mfma-dot-performance",
+        "Friday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_triton_tutorials",
+      "url": "https://github.com/ROCmSoftwarePlatform/triton",
+      "dockerfile": "docker/pyt_triton",
+      "dockercontext": "scripts/pyt_triton_tutorials",
+      "scripts": "scripts/pyt_triton_tutorials/",
+      "n_gpus": "1",
+      "owner": "rohit.santhanam@amd.com",
+      "training_precision": "",
+      "multiple_results": "triton_tutorials.csv",
+      "tags": [
+        "triton",
+        "Friday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_swin_ir_training",
+      "url": "https://github.com/bmedishe/KAIR",
+      "dockerfile": "docker/pyt",
+      "scripts": "scripts/pyt_swin_ir_training",
+      "data": "DIV2K_train_HR",
+      "n_gpus": "-1",
+      "owner": "bmedishe@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "Friday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_falcon_40b_instruct",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface_falcon40b_instruct",
+      "scripts": "scripts/huggingface_falcon",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "tags": [
+        "llm"
+      ],
+      "args": "tiiuae/falcon-40b-instruct"
+    },
+    {
+      "name": "pyt_llm_inference_llama2_70b_chat",
+      "url": "https://github.com/HaiShaw/llm-inference",
+      "dockerfile": "docker/pyt_llm_inference_llama2",
+      "data": "llama-2-70b-chat-hf",
+      "scripts": "scripts/llm_inference_llama2",
+      "n_gpus": "4",
+      "owner": "adabeyta@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_llm_inference_llama2_70b_chat.csv",
+      "tags": [
+        "llm"
+      ],
+      "args": ""
+    },
+    {
+      "name": "ds_llm_inference_llama2_13b_chat",
+      "url": "https://github.com/HaiShaw/llm-inference",
+      "dockerfile": "docker/pyt_llm_inference_llama2",
+      "data": "llama-2-13b-chat-hf",
+      "scripts": "scripts/llm_inference_llama2",
+      "n_gpus": "-1",
+      "owner": "adabeyta@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ds_llm_inference_llama2_13b_chat.csv",
+      "tags": [
+        "llm"
+      ],
+      "args": ""
+    },
+    {
+      "name": "ds_llm_inference_llama2_7b_chat",
+      "url": "https://github.com/HaiShaw/llm-inference",
+      "dockerfile": "docker/pyt_llm_inference_llama2",
+      "data": "llama-2-7b-chat-hf",
+      "scripts": "scripts/llm_inference_llama2",
+      "n_gpus": "-1",
+      "owner": "adabeyta@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_ds_llm_inference_llama2_7b_chat.csv",
+      "tags": [
+        "llm"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_llama2_70b_chat",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface_llama2",
+      "data": "llama-2-70b-chat-hf",
+      "scripts": "scripts/huggingface_llama2",
+      "n_gpus": "-1",
+      "owner": "adabeyta@amd.com",
+      "training_precision": "",
+      "tags": [
+        "llm"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_falcon_40b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface_falcon40b_instruct",
+      "scripts": "scripts/huggingface_falcon",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "tags": [
+        "llm"
+      ],
+      "args": "tiiuae/falcon-40b"
+    },
+    {
+      "name": "pyt_huggingface_falcon_7b_instruct",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface_falcon40b_instruct",
+      "scripts": "scripts/huggingface_falcon",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "Monday"
+      ],
+      "args": "tiiuae/falcon-7b-instruct"
+    },
+    {
+      "name": "pyt_huggingface_falcon_7b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface_falcon40b_instruct",
+      "scripts": "scripts/huggingface_falcon",
+      "n_gpus": "-1",
+      "owner": "cem.bozkus@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "Monday"
+      ],
+      "args": "tiiuae/falcon-7b"
+    },
+    {
+      "name": "jax_gpt_j_6b",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/jax_huggingface",
+      "scripts": "scripts/jax_gpt_j_6b",
+      "n_gpus": "8",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "timeout": 10800,
+      "tags": [
+      "jax",
+      "Tuesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "jax_ferminet",
+      "url": "https://github.com/ROCmSoftwarePlatform/ferminet",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/jax_ferminet",
+      "scripts": "scripts/jax_ferminet",
+      "n_gpus": "1",
+      "owner": "rahbatra@amd.com",
+      "training_precision": "",
+      "tags": [
+      "jax",
+      "Tuesday",
+      "ferminet"
+      ],
+      "args": ""
+     },
+     {
+      "name": "jax_alphafold",
+      "url": "https://github.com/ROCmSoftwarePlatform/alphafold",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/jax_alphafold",
+      "scripts": "scripts/jax_alphafold",
+      "n_gpus": "1",
+      "owner": "rahbatra@amd.com",
+      "training_precision": "",
+      "tags": [
+      "jax",
+      "Friday",
+      "alphafold"
+      ],
+      "args": ""
+     },
+    {
+      "name": "jax_flan_t5",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/jax_huggingface",
+      "scripts": "scripts/jax_flan_t5",
+      "n_gpus": "-1",
+      "owner": "Zachary.Streeter@amd.com",
+      "training_precision": "",
+      "tags": [
+        "jax",
+        "Tuesday"
+      ],
+      "args": ""
+     },
+    {
+      "name": "ort_stable_diffusion_stabilityai_stable-diffusion-2",
+      "url": "https://github.com/huggingface/diffusers",
+      "dockerfile": "docker/ort_huggingface_diffusers",
+      "scripts": "scripts/huggingface_diffusers/",
+      "data": "ort_stabilityai/stable-diffusion-2",
+      "n_gpus": "1",
+      "owner": "bmedishe@amd.com",
+      "training_precision": "",
+      "tags": [
+        "stable_diffusion",
+        "stabilityai_stable-diffusion-2",
+        "Monday",
+        "ort"
+      ],
+      "args": "--optimize_mode ort --sd_model stability_ai_sdv2_rocm_fp16"
+     },
+    {
+      "name": "pt2_stable_diffusion_stabilityai_stable-diffusion-2",
+      "url": "https://github.com/huggingface/diffusers",
+      "dockerfile": "docker/pt2_huggingface_diffusers",
+      "scripts": "scripts/huggingface_diffusers/",
+      "n_gpus": "1",
+      "owner": "bmedishe@amd.com",
+      "training_precision": "",
+      "tags": [
+        "stable_diffusion",
+        "stabilityai_stable-diffusion-2",
+        "Monday"
+      ],
+      "args": "--optimize_mode pt2 --sd_model stabilityai/stable-diffusion-2"
+     },
+    {
+      "name": "stable_diffusion_stabilityai_stable-diffusion-2",
+      "url": "https://github.com/huggingface/diffusers",
+      "dockerfile": "docker/pt2_huggingface_diffusers",
+      "scripts": "scripts/huggingface_diffusers/",
+      "n_gpus": "1",
+      "owner": "bmedishe@amd.com",
+      "training_precision": "",
+      "tags": [
+        "stable_diffusion",
+        "stabilityai_stable-diffusion-2",
+        "Monday"
+      ],
+      "args": " --sd_model stabilityai/stable-diffusion-2"
+     },
+    {
+      "name": "ait_stable_diffusion_stabilityai_stable-diffusion-2",
+      "url": "https://github.com/ROCmSoftwarePlatform/AITemplate",
+      "dockerfile": "docker/pyt_ait",
+      "scripts": "scripts/huggingface_diffusers/",
+      "n_gpus": "1",
+      "owner": "bmedishe@amd.com",
+      "training_precision": "",
+      "tags": [
+        "stable_diffusion",
+        "stabilityai_stable-diffusion-2",
+        "Monday"
+      ],
+      "args": "--optimize_mode ait --sd_model stabilityai/stable-diffusion-2"
+     },
+    {
+      "name": "pt2_ds2_train_huggingface_stable-diffusion-v1-4",
+      "url": "https://github.com/huggingface/diffusers",
+      "dockerfile": "docker/pt2_huggingface_diffusers",
+      "scripts": "scripts/pt2_huggingface_diffusers/train.sh",
+      "n_gpus": "-1",
+      "owner": "bmedishe@amd.com",
+      "training_precision": "fp16",
+      "multiple_results": "results_pt2_huggingface_stable-diffusion-v1-4.csv",
+      "tags": [
+        "pyt",
+        "Friday",
+        "huggingface",
+        "diffusers",
+        "stable-diffusion-v1-4"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_stable_diffusion_finetuning",
+      "url": "https://github.com/huggingface/diffusers",
+      "dockerfile": "docker/pyt_huggingface_diffusers",
+      "scripts": "scripts/pyt_huggingface_diffusers/train.sh",
+      "n_gpus": "-1",
+      "owner": "bmedishe@amd.com",
+      "training_precision": "fp16",
+      "multiple_results": "results_pyt_huggingface_stable-diffusion-v1-4.csv",
+      "tags": [
+        "pyt",
+        "Friday",
+        "huggingface",
+        "diffusers",
+        "stable-diffusion-v1-4"
+      ],
+      "args": "pytorch stabilityai/stable-diffusion-2"
+    },
+    {
+      "name": "jax_stable_diffusion",
+      "url": "https://github.com/huggingface/diffusers",
+      "dockerfile": "docker/jax_stable_diffusion",
+      "scripts": "scripts/jax_stable_diffusion/run.sh",
+      "n_gpus": "1",
+      "owner": "rahbatra@amd.com",
+      "training_precision": "fp16",
+      "tags": [
+        "jax",
+        "stable-diffusion",
+        "Saturday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_davit_singlegpu",
+      "url": "https://github.com/sheidanava/davit",
+      "dockerfile": "docker/pyt_davit",
+      "scripts": "scripts/pyt_davit/train.sh",
+      "n_gpus": "1",
+      "data": "stanford_tiny_imagenet_200",
+      "owner": "sheida.amirnavaei@amd.com",
+      "training_precision": "mixed_precsision",
+      "tags": [
+        "davit",
+        "Tuesday"
+          ],
+      "args": ""
+    },
+    {
+      "name": "pyt_huggingface_pythia_6.9b_deduped",
+      "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+      "dockerfile": "docker/pyt_huggingface_pythia_6.9b_deduped_ubuntu",
+      "scripts": "scripts/huggingface_pythia",
+      "n_gpus": "-1",
+      "owner": "roohollah.etemadi@amd.com",
+      "training_precision": "fp16",
+      "tags": [
+        "pyt",
+        "pythia_6.9b_deduped",
+        "fp16",
+          "Sunday"
+          ],
+      "args": "--deepspeed=ds_config_zero_3.json deepspeed"
+    },
+    {
+      "name": "tf2_tfm_vit_infer",
+      "url": "https://github.com/ROCmSoftwarePlatform/tensorflow-models",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/tf2_tfm_vit",
+      "scripts": "scripts/tf2_tfm_vit/infer.sh",
+      "data": "ilsvrc_imagenet_tf",
+      "timeout": 14400,
+      "n_gpus": "-1",
+      "owner": "rahbatra@amd.com",
+      "training_precision": "",
+      "tags": [
+        "tf2",
+        "tfm",
+        "Wednesday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "tf2_tfm_resnet50_train",
+      "url": "https://github.com/ROCmSoftwarePlatform/tensorflow-models",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/tf2_tfm_resnet50",
+      "scripts": "scripts/tf2_tfm_resnet50/train.sh",
+      "data": "ilsvrc_imagenet_tf",
+      "timeout": 36000,
+      "n_gpus": "-1",
+      "owner": "rahbatra@amd.com",
+      "training_precision": "",
+      "tags": [
+        "tf2",
+        "tfm",
+        "Tuesday",
+        "training"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_dalle2_train_decoder",
+      "url": "https://github.com/lucidrains/DALLE2-pytorch",
+      "dockerfile": "docker/pyt_dalle2",
+      "scripts": "scripts/pyt_dalle2/train_decoder.sh",
+      "data": "coco_2017_webdataset",
+      "n_gpus": "-1",
+      "owner": "bmedishe@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "dalle2",
+        "Friday",
+        "training"
+      ],
+      "args": ""
+    },
+    {
+      "name": "tf2_tfm_resnet50_infer",
+      "url": "https://github.com/ROCmSoftwarePlatform/tensorflow-models",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/tf2_tfm_resnet50",
+      "scripts": "scripts/tf2_tfm_resnet50/infer.sh",
+      "data": "ilsvrc_imagenet_tf",
+      "timeout": 36000,
+      "n_gpus": "-1",
+      "owner": "rahbatra@amd.com",
+      "training_precision": "",
+      "tags": [
+        "tf2",
+        "tfm",
+        "Monday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_davit_singlenode",
+      "url": "https://github.com/sheidanava/davit",
+      "dockerfile": "docker/pyt_davit",
+      "scripts": "scripts/pyt_davit/train.sh",
+      "n_gpus": "-1",
+      "data": "stanford_tiny_imagenet_200",
+      "owner": "sheida.amirnavaei@amd.com",
+      "training_precision": "mixed_precision",
+      "tags": [
+        "davit",
+        "Tuesday"
+          ],
+      "args": ""
+    },
+    {
+      "name": "pyt_dalle2_train_diffusion_prior",
+      "url": "https://github.com/lucidrains/DALLE2-pytorch",
+      "dockerfile": "docker/pyt_dalle2",
+      "scripts": "scripts/pyt_dalle2/train_diffusion_prior.sh",
+      "data": "coco_2017_clip_image_embeddings",
+      "n_gpus": "-1",
+      "owner": "bmedishe@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "dalle2",
+        "Friday",
+        "training"
+      ],
+      "args": ""
+    },
+    {
+      "name": "tf2_tfm_vit_train",
+      "url": "https://github.com/ROCmSoftwarePlatform/tensorflow-models",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/tf2_tfm_vit",
+      "scripts": "scripts/tf2_tfm_vit/train.sh",
+      "data": "ilsvrc_imagenet_tf",
+      "timeout": 36000,
+      "n_gpus": "-1",
+      "owner": "rahbatra@amd.com",
+      "training_precision": "",
+      "tags": [
+        "tf2",
+        "tfm",
+        "Thursday",
+        "training"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_ftvsr",
+      "url": "https://github.com/pnunna93/FTVSR",
+      "dockerfile": "docker/pyt_ftvsr",
+      "scripts": "scripts/pyt_ftvsr/train.sh",
+      "n_gpus": "-1",
+      "data": "ftvsr_dataset",
+      "timeout": 14400,
+      "owner": "sheida.amirnavaei@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "ftvsr",
+        "training"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_deepspeed_moe_cifar",
+      "url": "https://github.com/microsoft/DeepSpeedExamples",
+      "dockerfile": "docker/pyt_deepspeed_moe_cifar",
+      "data": "pyt_deepspeed_moe_cifar",
+      "scripts": "scripts/pyt_deepspeed_moe_cifar/run.sh",
+      "n_gpus": "-1",
+      "owner": "roohollah.etemadi@amd.com",
+      "training_precision": "",
+      "tags": [
+        "pyt",
+        "deepspeed_moe_cifar",
+        "Sunday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "rccl_empty_kernel_latency_test",
+      "url": "https://github.com/ROCmSoftwarePlatform/rccl-tests",
+      "dockerfile": "docker/rccl_empty_kernel_latency",
+      "scripts": "scripts/rccl_empty_kernel_latency/run.sh",
+      "n_gpus": "-1",
+      "owner": "chaitanya.srikrishnalolla@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_rccl_latency.csv",
+      "tags": [
+        "rccl_latency",
+        "Monday"
+      ],
+      "args": ""
+    },
+    {
+      "name": "pyt_vllm-13b",
+      "url": "https://github.com/ROCmSoftwarePlatform/vllm-private",
+      "data": "Llama-2-13B-Chat-fp16",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_vllm",
+      "scripts": "scripts/pyt_vllm/run.sh",
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "timeout": 10800,
+      "training_precision": "",
+      "multiple_results": "perf_pyt_vllm.csv",
+      "tags": [
+        "llama-v2",
+        "llm",
+        "vllm"
+      ],
+      "args": "--model_name Llama-2-13B-Chat-fp16"
+    },
+    {
+      "name": "pyt_vllm-70b",
+      "url": "https://github.com/ROCmSoftwarePlatform/vllm-private",
+      "data": "llama-2-70b-chat-hf",
+      "cred": "ROCmSoftwarePlatform",
+      "dockerfile": "docker/pyt_vllm",
+      "scripts": "scripts/pyt_vllm/run.sh",
+      "n_gpus": "-1",
+      "owner": "li.li3@amd.com",
+      "timeout": 10800,
+      "training_precision": "",
+      "multiple_results": "perf_pyt_vllm.csv",
+      "tags": [
+        "llama-v2",
+        "llm",
+        "vllm"
+      ],
+      "args": "--model_name llama-2-70b-chat-hf"
+    },
+    {
+      "name": "onnxrt_llama-2-7b",
+      "url": "https://github.com/microsoft/onnxruntime",
+      "data": "llama-2-7b-chat-hf",
+      "dockerfile": "docker/ort_llama2",
+      "scripts": "scripts/ort_llama2/run.sh",
+      "timeout": 7200,
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_onnxrt_llama-2-7b.csv",
+      "tags": [
+        "llama-v2",
+        "llama-v2-7b",
+        "llm",
+        "onnx",
+        "ort"
+      ],
+      "args": "--model_name llama-2-7b-chat-hf --output_file perf_onnxrt_llama-2-7b.csv --n_gpus 1"
+    },
+    {
+      "name": "onnxrt_llama-2-13b",
+      "url": "https://github.com/microsoft/onnxruntime",
+      "data": "llama-2-13b-chat-hf",
+      "dockerfile": "docker/ort_llama2",
+      "scripts": "scripts/ort_llama2/run.sh",
+      "timeout": 10800,
+      "n_gpus": "1",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_onnxrt_llama-2-13b.csv",
+      "tags": [
+        "llama-v2",
+        "llama-v2-13b",
+        "llm",
+        "onnx",
+        "ort"
+      ],
+      "args": "--model_name llama-2-13b-chat-hf --output_file perf_onnxrt_llama-2-13b.csv --n_gpus 1"
+    },
+    {
+      "name": "onnxrt_llama-2-70b",
+      "url": "https://github.com/microsoft/onnxruntime",
+      "data": "llama-2-70b-chat-hf",
+      "dockerfile": "docker/ort_llama2",
+      "scripts": "scripts/ort_llama2/run.sh",
+      "timeout": 16200,
+      "n_gpus": "8",
+      "owner": "li.li3@amd.com",
+      "training_precision": "",
+      "multiple_results": "perf_onnxrt_llama-2-70b.csv",
+      "tags": [
+        "llama-v2",
+        "llama-v2-70b",
+        "llm",
+        "onnx",
+        "ort"
+      ],
+      "args": "--model_name llama-2-70b-chat-hf --output_file perf_onnxrt_llama-2-70b.csv --n_gpus 8"
+    },
+    {
+      "name": "ort_huggingface_stable_diffusion_finetuning",
+      "url": "https://github.com/huggingface/diffusers",
+      "dockerfile": "docker/ort_stable_diffusion_finetuning",
+      "scripts": "scripts/pyt_huggingface_diffusers/train.sh",
+      "n_gpus": "-1",
+      "timeout": 14400,
+      "owner": "bmedishe@amd.com",
+      "training_precision": "fp16",
+      "multiple_results": "results_pyt_huggingface_stable-diffusion-v1-4.csv",
+      "tags": [
+        "pyt",
+        "Friday",
+        "huggingface",
+        "diffusers",
+        "stable-diffusion-v1-4"
+      ],
+      "args": "ort stabilityai/stable-diffusion-2"
+    },
+    {
+        "name": "ort_huggingface_distilgpt2",
+        "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+        "dockerfile": "docker/ort_huggingface",
+        "scripts": "scripts/huggingface_gpt2/run.sh",
+        "data": "huggingface",
+        "n_gpus": "-1",
+        "owner": "joseph.groenenboom@amd.com",
+        "training_precision": "",
+        "tags": [
+        "ort",
+        "gpt2",
+        "Thursday"
+        ],
+        "args": "--ort --model-name=distilgpt2"
+    },
+    {
+        "name": "ort_huggingface_distilgpt2_fp32",
+        "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+        "dockerfile": "docker/ort_huggingface",
+        "scripts": "scripts/huggingface_gpt2/run.sh",
+        "data": "huggingface",
+        "n_gpus": "-1",
+        "owner": "joseph.groenenboom@amd.com",
+        "training_precision": "",
+        "tags": [
+        "ort",
+        "gpt2",
+        "Thursday"
+        ],
+        "args": "--ort --model_name=distilgpt2 --precision=fp32"
+    },
+    {
+        "name": "pyt_huggingface_distilgpt2",
+        "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+        "dockerfile": "docker/pyt_huggingface",
+        "scripts": "scripts/huggingface_gpt2/run.sh",
+        "data": "huggingface",
+        "n_gpus": "-1",
+        "owner": "joseph.groenenboom@amd.com",
+        "training_precision": "",
+        "tags": [
+        "pyt",
+        "gpt2",
+        "Thursday"
+        ],
+        "args": "--model-name=distilgpt2"
+    },
+    {
+        "name": "pyt_huggingface_distilgpt2_fp32",
+        "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+        "dockerfile": "docker/pyt_huggingface",
+        "scripts": "scripts/huggingface_gpt2/run.sh",
+        "data": "huggingface",
+        "n_gpus": "-1",
+        "owner": "joseph.groenenboom@amd.com",
+        "training_precision": "",
+        "tags": [
+        "pyt",
+        "gpt2",
+        "Thursday"
+        ],
+        "args": "--model_name=distilgpt2 --precision=fp32"
+    },
+    {
+        "name": "pyt_library_config_perf",
+        "url": "https://github.com/ROCmSoftwarePlatform/transformers",
+        "dockerfile": "docker/pyt_library_config_perf",
+        "scripts": "scripts/pyt_library_config_perf/run.sh",
+        "n_gpus": "-1",
+        "owner": "aswin.mathews@amd.com",
+        "training_precision": "",
+        "tags": [
+        "tuning"
+        ],
+        "args": ""
+    }
+  ]
+  
